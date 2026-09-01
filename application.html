@@ -8,7 +8,10 @@
 <meta property="og:title" content="Заявка — Клавиатура для смелых разговоров">
 <meta property="og:description" content="Одиннадцать вопросов анкеты Sber500xDisrupt и развёрнутые ответы на каждый.">
 <meta property="og:type" content="website">
+<meta name="theme-color" content="#D81E5B">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Cpath%20d='M10.5,2.5H21.5A7.5,7.5,0,0,1,29,10V18A7.5,7.5,0,0,1,21.5,25.5H16.8L8,31L10.6,25.3A7.5,7.5,0,0,1,3,18V10A7.5,7.5,0,0,1,10.5,2.5Z'%20fill='%23D81E5B'/%3E%3Cg%20fill='%23fff'%3E%3Crect%20x='9.2'%20y='15.3'%20width='3.2'%20height='5.2'%20rx='1.6'/%3E%3Crect%20x='14.4'%20y='12.1'%20width='3.2'%20height='8.4'%20rx='1.6'/%3E%3Crect%20x='19.6'%20y='8.9'%20width='3.2'%20height='11.6'%20rx='1.6'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;0,800;1,500;1,700;1,800&family=JetBrains+Mono:wght@400;500;600&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -23,8 +26,15 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)document.docum
   <div class="shell">
 
     <header class="site-head">
-      <a class="brandmark" href="index.html">
-        <span class="keycap" aria-hidden="true">Т</span>
+      <a class="brandmark" href="index.html" aria-label="Тон — на главную">
+        <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path class="lm-body" d="M10.5 2.5H21.5A7.5 7.5 0 0 1 29 10V18A7.5 7.5 0 0 1 21.5 25.5H16.8L8 31L10.6 25.3A7.5 7.5 0 0 1 3 18V10A7.5 7.5 0 0 1 10.5 2.5Z"/>
+          <g class="lm-bars">
+            <rect x="9.2" y="15.3" width="3.2" height="5.2" rx="1.6"/>
+            <rect x="14.4" y="12.1" width="3.2" height="8.4" rx="1.6"/>
+            <rect x="19.6" y="8.9" width="3.2" height="11.6" rx="1.6"/>
+          </g>
+        </svg>
         <span class="wm">Тон<small>рабочее название</small></span>
       </a>
       <nav class="site-nav" aria-label="Разделы">
@@ -54,6 +64,16 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)document.docum
             и развёрнутый ответ на каждый — от аудитории и боли до плана по неделям
             и состава команды.
           </p>
+          <ul class="caps" data-a="45" aria-label="Что внутри заявки">
+            <li>
+              <svg class="ladder" viewBox="0 0 20 14" aria-hidden="true"><rect x="0" y="8" width="4" height="6" rx="2"/><rect x="7" y="4" width="4" height="10" rx="2"/><rect x="14" y="0" width="4" height="14" rx="2"/></svg>
+              одиннадцать вопросов
+            </li>
+            <li><i aria-hidden="true"></i>план по восьми неделям</li>
+            <li><i aria-hidden="true"></i>шесть функций на LLM</li>
+            <li><i aria-hidden="true"></i>состав из пяти человек</li>
+          </ul>
+
           <div class="hero-actions" data-a="5">
             <a class="btn btn-solid" href="#q1">
               Читать ответы
@@ -72,6 +92,7 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)document.docum
               <b>Анкета</b>
               <span class="mono">11 из 11 отвечено</span>
             </div>
+            <div class="bar" aria-hidden="true"><i></i></div>
             <ol class="qlist">
               <li><span class="no">01</span>Гипотеза<span class="tk" data-tick><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span></li>
               <li><span class="no">02</span>Запасная гипотеза<span class="tk" data-tick><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span></li>
@@ -85,6 +106,10 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)document.docum
               <li><span class="no">10</span>Команда<span class="tk" data-tick><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span></li>
               <li><span class="no">11</span>Чего не хватает<span class="tk" data-tick><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span></li>
             </ol>
+          </div>
+          <div class="callout-card stack">
+            <span class="mono">Правило заявки</span>
+            <p>Ни одной выдуманной цифры и ни одного непроверяемого утверждения о конкурентах. Чего не знаем — оставлено пустым.</p>
           </div>
         </figure>
       </div>
@@ -150,6 +175,11 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)document.docum
           <p><strong>Ядро — знакомства.</strong> Первое сообщение, ответ на которое определяет, будет ли разговор вообще. Попытка перевести переписку из вежливой в живую. Момент, когда собеседник ответил односложно и непонятно, что делать дальше.</p>
           <p><strong>Вокруг ядра</strong> — те же люди в других разговорах, где цена слова высока: попросить о повышении, отказать не обидев, извиниться, разрядить конфликт, написать первым спустя месяц молчания.</p>
           <p class="pullquote">Это не отдельная аудитория, а тот же пользователь в другой день.</p>
+          <figure class="shot-side">
+            <img src="https://images.unsplash.com/photo-1758520388178-c1cdb4d24766?auto=format&amp;fit=crop&amp;w=1200&amp;q=70"
+                 alt="Две девушки вместе смотрят в экран смартфона" loading="lazy" width="1200" height="800">
+            <figcaption>Ядро — те, кто переписывается каждый день и для кого одно сообщение решает, будет ли разговор.</figcaption>
+          </figure>
         </div>
       </section>
 
@@ -160,6 +190,11 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)document.docum
           <p>В переписке с высокой ставкой человек пишет и стирает, перечитывает, откладывает телефон и возвращается через час. <strong>Пауза сама становится сообщением:</strong> чем дольше молчание, тем труднее ответить.</p>
           <p>Существующие помощники устроены так, что не попадают в этот момент. Их путь проходит через скриншот: снять экран переписки, отдать его приложению или панели, дождаться разбора, скопировать вариант, вернуться и вставить. <strong>Несколько шагов в ситуации, где человек колеблется секунды.</strong></p>
           <p>Поэтому ими пользуются один раз из любопытства, а потом забывают: помощь приходит позже, чем нужна.</p>
+          <figure class="shot-side">
+            <img src="https://images.unsplash.com/photo-1550614806-51d8db524675?auto=format&amp;fit=crop&amp;w=1200&amp;q=70"
+                 alt="Молодой человек стоит с телефоном в руке и смотрит в экран" loading="lazy" width="1200" height="800">
+            <figcaption>Момент колебания длится секунды. Всё, что требует шести действий, в него не попадает.</figcaption>
+          </figure>
         </div>
       </section>
 
@@ -201,6 +236,132 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)document.docum
             </li>
           </ol>
           <p><a href="index.html#how">Как это выглядит на экране — живой прототип на странице продукта →</a></p>
+        </div>
+
+        <div class="screens q-screens" data-rv="rise" data-stagger>
+
+          <figure class="scr-card">
+            <div class="device">
+              <div class="screen">
+                <div class="scr-top">
+                  <span class="back" aria-hidden="true">‹</span>
+                  <span class="av" aria-hidden="true">И</span>
+                  <span class="who"><b>Ирина · руководитель</b><span>рабочий чат</span></span>
+                </div>
+                <div class="chat" style="height:7em">
+                  <div class="inner">
+                    <div class="bub in">задача на выходные, сделаешь?<time>18:20</time></div>
+                  </div>
+                </div>
+                <div class="kb still">
+                  <div class="kb-head">
+                    <span class="t"><span class="bk" aria-hidden="true">‹</span>Ваш черновик</span>
+                    <span class="priv">
+                      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10.5" width="16" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
+                      ушёл только этот текст
+                    </span>
+                  </div>
+                  <div class="sheet">
+                    <div class="dbox"><span class="cap">вы написали</span>у меня вообще-то выходные, почему всегда я</div>
+                    <div class="rowpills">
+                      <span class="pill on">смягчить</span>
+                      <span class="pill">короче</span>
+                      <span class="pill">увереннее</span>
+                      <span class="pill">теплее</span>
+                    </div>
+                    <div class="dbox out"><span class="cap">получилось</span>Могу взяться в понедельник с утра — выходные уже занял. Если горит, давай обсудим, что сдвинуть.</div>
+                    <div class="kb-foot">
+                      <span class="ghost">вернуть как было</span>
+                      <span class="solid">вставить</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <figcaption>
+              <span class="mono">Работа с черновиком</span>
+              <b>Пользователь остаётся автором</b>
+              <span class="t">Самый частый, по нашей гипотезе, сценарий: нужен не текст за человека, а помощь дожать свой.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="scr-card">
+            <div class="device">
+              <div class="screen">
+                <div class="scr-top">
+                  <span class="back" aria-hidden="true">‹</span>
+                  <span class="av" aria-hidden="true">А</span>
+                  <span class="who"><b>Аня</b><span>была в сети 40 минут назад</span></span>
+                </div>
+                <div class="chat" style="height:8.2em">
+                  <div class="inner">
+                    <div class="bub out">есть два билета на субботу<time>22:03</time></div>
+                    <div class="bub in flat" style="box-shadow:0 0 0 .16em var(--brand)">ок<time>22:41</time></div>
+                  </div>
+                </div>
+                <div class="kb still">
+                  <div class="kb-head">
+                    <span class="t"><span class="bk" aria-hidden="true">‹</span>Что он имел в виду</span>
+                    <span class="priv">
+                      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10.5" width="16" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
+                      отправлено 2 сообщения
+                    </span>
+                  </div>
+                  <div class="sheet">
+                    <div class="reads">
+                      <p class="rd"><b>01</b>Согласие без энтузиазма: план принят, но выбирали не вместе.</p>
+                      <p class="rd"><b>02</b>Занята и отвечает на бегу — тогда сорок минут ничего не значат.</p>
+                      <p class="rd"><b>03</b>Задело что-то из прошлой переписки.</p>
+                    </div>
+                    <p class="note-line">
+                      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6v.6"/></svg>
+                      Это версии, а не факт.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <figcaption>
+              <span class="mono">Разбор ответа</span>
+              <b>Несколько прочтений, ни одного как истина</b>
+              <span class="t">Односложное «ок», долгая пауза, резкая смена тона. Продукт не читает мысли и не делает вид, что читает.</span>
+            </figcaption>
+          </figure>
+
+          <figure class="scr-card">
+            <div class="device">
+              <div class="screen">
+                <div class="scr-top">
+                  <span class="back" aria-hidden="true">‹</span>
+                  <span class="av" aria-hidden="true" style="background:var(--ink-2)">
+                    <svg viewBox="0 0 24 24" style="width:1.1em;height:1.1em;stroke:#fff;fill:none;stroke-width:2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10.5" width="16" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
+                  </span>
+                  <span class="who"><b>Прозрачность</b><span>последний запрос · 22:42</span></span>
+                </div>
+                <div class="pane">
+                  <div class="pcard">
+                    <span class="k">ушло на обработку</span>
+                    <span class="msg"><em>22:03</em>есть два билета на субботу</span>
+                    <span class="msg"><em>22:41</em>ок</span>
+                  </div>
+                  <div class="pcard">
+                    <span class="k">не отправлялось</span>
+                    <span class="no"><svg viewBox="0 0 24 24" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>вся переписка выше этих двух сообщений</span>
+                    <span class="no"><svg viewBox="0 0 24 24" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>имя, номер и профиль собеседника</span>
+                    <span class="no"><svg viewBox="0 0 24 24" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>другие ваши чаты</span>
+                  </div>
+                  <div class="prow"><span>Показывать этот экран перед каждым запросом</span><i class="sw on" aria-hidden="true"></i></div>
+                  <div class="prow"><span>Хранить историю запросов на устройстве</span><i class="sw" aria-hidden="true"></i></div>
+                </div>
+              </div>
+            </div>
+            <figcaption>
+              <span class="mono">Экран прозрачности</span>
+              <b>Видно, что именно ушло</b>
+              <span class="t">Ровно те сообщения, которые пользователь видел перед собой, и явный список того, что не отправлялось.</span>
+            </figcaption>
+          </figure>
+
         </div>
       </section>
 
@@ -539,10 +700,38 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)document.docum
   </div>
 </div>
 
+<section class="band field closing-field">
+  <img class="bg" src="https://images.unsplash.com/photo-1571953146900-fe98e3d47c93?auto=format&amp;fit=crop&amp;w=1800&amp;q=65"
+       alt="" aria-hidden="true" loading="lazy" width="1800" height="1000">
+  <div class="shell">
+    <div class="closing" data-rv="wipe">
+      <span class="mono">Продукт</span>
+      <h2>Одиннадцать ответов — <em>и один живой экран</em></h2>
+      <p class="lead">На странице продукта сцена клавиатуры идёт сама: пришёл сухой ответ, человек написал и стёр, нажал одну кнопку — и получил три варианта разного тона.</p>
+      <p style="margin-top:26px"><a class="btn btn-solid" href="index.html#how">Открыть прототип
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a></p>
+    </div>
+  </div>
+</section>
+
 <footer class="site-foot">
   <div class="shell">
     <div class="foot-grid">
-      <p class="big">Клавиатура для смелых разговоров</p>
+      <div>
+        <div class="foot-lock">
+          <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <path class="lm-body" d="M10.5 2.5H21.5A7.5 7.5 0 0 1 29 10V18A7.5 7.5 0 0 1 21.5 25.5H16.8L8 31L10.6 25.3A7.5 7.5 0 0 1 3 18V10A7.5 7.5 0 0 1 10.5 2.5Z"/>
+            <g class="lm-bars">
+              <rect x="9.2" y="15.3" width="3.2" height="5.2" rx="1.6"/>
+              <rect x="14.4" y="12.1" width="3.2" height="8.4" rx="1.6"/>
+              <rect x="19.6" y="8.9" width="3.2" height="11.6" rx="1.6"/>
+            </g>
+          </svg>
+          <span class="wm">Тон<small>рабочее название</small></span>
+        </div>
+        <p class="big">Клавиатура для смелых разговоров</p>
+      </div>
       <nav class="foot-links" aria-label="Ссылки">
         <a href="index.html">Продукт</a>
         <a href="application.html">Заявка</a>

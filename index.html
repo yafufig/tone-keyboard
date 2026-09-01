@@ -8,7 +8,10 @@
 <meta property="og:title" content="Тон — клавиатура для смелых разговоров">
 <meta property="og:description" content="Три варианта ответа разного тона прямо в клавиатуре. Одно касание вместо шести.">
 <meta property="og:type" content="website">
+<meta name="theme-color" content="#D81E5B">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Cpath%20d='M10.5,2.5H21.5A7.5,7.5,0,0,1,29,10V18A7.5,7.5,0,0,1,21.5,25.5H16.8L8,31L10.6,25.3A7.5,7.5,0,0,1,3,18V10A7.5,7.5,0,0,1,10.5,2.5Z'%20fill='%23D81E5B'/%3E%3Cg%20fill='%23fff'%3E%3Crect%20x='9.2'%20y='15.3'%20width='3.2'%20height='5.2'%20rx='1.6'/%3E%3Crect%20x='14.4'%20y='12.1'%20width='3.2'%20height='8.4'%20rx='1.6'/%3E%3Crect%20x='19.6'%20y='8.9'%20width='3.2'%20height='11.6'%20rx='1.6'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;0,800;1,500;1,700;1,800&family=JetBrains+Mono:wght@400;500;600&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -23,8 +26,15 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)document.docum
   <div class="shell">
 
     <header class="site-head">
-      <a class="brandmark" href="index.html">
-        <span class="keycap" aria-hidden="true">Т</span>
+      <a class="brandmark" href="index.html" aria-label="Тон — на главную">
+        <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path class="lm-body" d="M10.5 2.5H21.5A7.5 7.5 0 0 1 29 10V18A7.5 7.5 0 0 1 21.5 25.5H16.8L8 31L10.6 25.3A7.5 7.5 0 0 1 3 18V10A7.5 7.5 0 0 1 10.5 2.5Z"/>
+          <g class="lm-bars">
+            <rect x="9.2" y="15.3" width="3.2" height="5.2" rx="1.6"/>
+            <rect x="14.4" y="12.1" width="3.2" height="8.4" rx="1.6"/>
+            <rect x="19.6" y="8.9" width="3.2" height="11.6" rx="1.6"/>
+          </g>
+        </svg>
         <span class="wm">Тон<small>рабочее название</small></span>
       </a>
       <nav class="site-nav" aria-label="Разделы">
@@ -56,6 +66,17 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)document.docum
             прямо в том чате, где вы застряли. Без скриншотов, без перехода в другое приложение,
             без чтения переписки в фоне.
           </p>
+
+          <ul class="caps" data-a="45" aria-label="Что умеет клавиатура">
+            <li>
+              <svg class="ladder" viewBox="0 0 20 14" aria-hidden="true"><rect x="0" y="8" width="4" height="6" rx="2"/><rect x="7" y="4" width="4" height="10" rx="2"/><rect x="14" y="0" width="4" height="14" rx="2"/></svg>
+              три тона ответа
+            </li>
+            <li><i aria-hidden="true"></i>переписать свой черновик</li>
+            <li><i aria-hidden="true"></i>разобрать чужое «ок»</li>
+            <li><i aria-hidden="true"></i>первое сообщение</li>
+            <li><i aria-hidden="true"></i>видно, что ушло на обработку</li>
+          </ul>
 
           <div class="hero-actions" data-a="5">
             <a class="btn btn-solid" href="#how">
@@ -151,6 +172,11 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)document.docum
             </div>
           </div>
 
+          <div class="callout-card slim">
+            <span class="mono">Одна кнопка</span>
+            <p>Панель заменяет клавиши, нижний ряд остаётся на месте. Из чата вы не выходите ни на шаг.</p>
+          </div>
+
         </figure>
       </div>
     </section>
@@ -192,10 +218,253 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)document.docum
           </p>
         </div>
       </div>
+
+      <figure class="shot" data-rv="scale">
+        <img src="https://images.unsplash.com/photo-1571953146900-fe98e3d47c93?auto=format&amp;fit=crop&amp;w=1600&amp;q=70"
+             alt="Человек ночью, накрывшись одеялом, смотрит в светящийся экран телефона"
+             loading="lazy" width="1600" height="900">
+        <figcaption>
+          <span class="mono">Момент, ради которого всё</span>
+          <q>Одиннадцать минут на сообщение из трёх слов</q>
+          <p>Помощь, которая приходит через шесть действий и полторы минуты, опаздывает. Клавиатура — то, что уже открыто.</p>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
-  <section class="band band-paper2">
+  <section class="band band-paper2" id="screens">
+    <div class="shell">
+      <div class="sec-head" data-rv="wipe">
+        <span class="mono">Экраны</span>
+        <h2>Не одна кнопка, <em>а продукт целиком</em></h2>
+        <p>Подсказка ответа — только вход. Ниже пять остальных экранов: переписывание своего черновика, разбор чужого сообщения, отчёт о том, что ушло на обработку, настройки тона и первое сообщение.</p>
+      </div>
+
+      <div class="screens" data-rv="rise" data-stagger>
+
+        <figure class="scr-card">
+          <div class="device" id="soften">
+            <div class="screen">
+              <div class="scr-top">
+                <span class="back" aria-hidden="true">‹</span>
+                <span class="av" aria-hidden="true">И</span>
+                <span class="who"><b>Ирина · руководитель</b><span>рабочий чат</span></span>
+              </div>
+              <div class="chat" style="height:8.4em">
+                <div class="inner" style="transform:none">
+                  <div class="bub in">задача на выходные, сделаешь?<time>18:20</time></div>
+                </div>
+              </div>
+              <div class="kb still">
+                <div class="kb-head">
+                  <span class="t"><span class="bk" aria-hidden="true">‹</span>Ваш черновик</span>
+                  <span class="priv">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10.5" width="16" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
+                    ушёл только этот текст
+                  </span>
+                </div>
+                <div class="sheet">
+                  <div class="dbox">
+                    <span class="cap">вы написали</span>
+                    <span class="rw" data-rw></span>
+                  </div>
+                  <div class="rowpills">
+                    <span class="pill" data-sp="1">смягчить</span>
+                    <span class="pill" data-sp="2">короче</span>
+                    <span class="pill" data-sp="3">увереннее</span>
+                    <span class="pill" data-sp="4">теплее</span>
+                  </div>
+                  <div class="dbox out on" data-outbox>
+                    <span class="cap">получилось</span>
+                    <span class="rw" data-rwout></span>
+                  </div>
+                  <div class="kb-foot">
+                    <span class="ghost">вернуть как было</span>
+                    <span class="solid">вставить</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <span class="mono">02 · Черновик</span>
+            <b>Переписать то, что вы уже написали</b>
+            <span class="t">«Смягчить», «короче», «увереннее», «теплее» — про ваш текст. Вы остаётесь автором: продукт снимает затык, а не пишет за вас.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="scr-card">
+          <div class="device">
+            <div class="screen">
+              <div class="scr-top">
+                <span class="back" aria-hidden="true">‹</span>
+                <span class="av" aria-hidden="true">А</span>
+                <span class="who"><b>Аня</b><span>была в сети 40 минут назад</span></span>
+              </div>
+              <div class="chat" style="height:8.4em">
+                <div class="inner" style="transform:none">
+                  <div class="bub out">есть два билета на субботу<time>22:03</time></div>
+                  <div class="bub in flat" style="box-shadow:0 0 0 .16em var(--brand)">ок<time>22:41</time></div>
+                </div>
+              </div>
+              <div class="kb still">
+                <div class="kb-head">
+                  <span class="t"><span class="bk" aria-hidden="true">‹</span>Что он имел в виду</span>
+                  <span class="priv">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10.5" width="16" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
+                    отправлено 2 сообщения
+                  </span>
+                </div>
+                <div class="sheet">
+                  <div class="reads">
+                    <p class="rd"><b>01</b>Согласие без энтузиазма: план принят, но выбирали не вместе.</p>
+                    <p class="rd"><b>02</b>Занята и отвечает на бегу — тогда сорок минут ничего не значат.</p>
+                    <p class="rd"><b>03</b>Задело что-то из прошлой переписки.</p>
+                  </div>
+                  <p class="note-line">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6v.6"/></svg>
+                    Это версии, а не факт — продукт не читает мысли.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <span class="mono">03 · Разбор</span>
+            <b>Что он имел в виду</b>
+            <span class="t">Односложное «ок», долгая пауза, резкая смена тона. Несколько возможных прочтений — и ни одно не подано как истина.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="scr-card">
+          <div class="device">
+            <div class="screen">
+              <div class="scr-top">
+                <span class="back" aria-hidden="true">‹</span>
+                <span class="av" aria-hidden="true" style="background:var(--ink-2)">
+                  <svg viewBox="0 0 24 24" style="width:1.1em;height:1.1em;stroke:#fff;fill:none;stroke-width:2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10.5" width="16" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
+                </span>
+                <span class="who"><b>Прозрачность</b><span>последний запрос · 22:42</span></span>
+              </div>
+              <div class="pane">
+                <div class="pcard">
+                  <span class="k">ушло на обработку</span>
+                  <span class="msg"><em>22:03</em>есть два билета на субботу</span>
+                  <span class="msg"><em>22:41</em>ок</span>
+                </div>
+                <div class="pcard">
+                  <span class="k">не отправлялось</span>
+                  <span class="no"><svg viewBox="0 0 24 24" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>вся переписка выше этих двух сообщений</span>
+                  <span class="no"><svg viewBox="0 0 24 24" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>имя, номер и профиль собеседника</span>
+                  <span class="no"><svg viewBox="0 0 24 24" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>другие ваши чаты</span>
+                </div>
+                <div class="prow"><span>Показывать этот экран перед каждым запросом</span><i class="sw on" aria-hidden="true"></i></div>
+                <div class="prow"><span>Хранить историю запросов на устройстве</span><i class="sw" aria-hidden="true"></i></div>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <span class="mono">04 · Прозрачность</span>
+            <b>Что именно ушло на обработку</b>
+            <span class="t">Ровно те сообщения, которые вы видели перед собой, — и явный список того, что не отправлялось. Приватность как экран, а не как абзац в оферте.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="scr-card">
+          <div class="device">
+            <div class="screen">
+              <div class="scr-top">
+                <span class="back" aria-hidden="true">‹</span>
+                <span class="av" aria-hidden="true">Т</span>
+                <span class="who"><b>Настройки тона</b><span>действуют во всех чатах</span></span>
+              </div>
+              <div class="pane">
+                <div class="pcard">
+                  <span class="k">обращение</span>
+                  <span class="seg"><span class="on">ты</span><span>вы</span><span>как в чате</span></span>
+                </div>
+                <div class="pcard">
+                  <span class="k">по умолчанию</span>
+                  <span class="sld">
+                    <span class="track"><i></i></span>
+                    <span class="ends"><span>сдержанно</span><span>тепло</span></span>
+                  </span>
+                </div>
+                <div class="pcard">
+                  <span class="k">длина ответа</span>
+                  <span class="seg"><span>короче</span><span class="on">как есть</span><span>развёрнуто</span></span>
+                </div>
+                <div class="prow"><span>Не шутить в рабочих чатах</span><i class="sw on" aria-hidden="true"></i></div>
+                <div class="prow"><span>Добавлять эмодзи</span><i class="sw" aria-hidden="true"></i></div>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <span class="mono">05 · Настройки</span>
+            <b>Каким вы хотите звучать</b>
+            <span class="t">«Ты» и «вы», сдержаннее или теплее, короче или развёрнуто. Разница между регистрами в русском устроена иначе, чем в английском, — это и есть работа.</span>
+          </figcaption>
+        </figure>
+
+        <figure class="scr-card">
+          <div class="device">
+            <div class="screen">
+              <div class="scr-top">
+                <span class="back" aria-hidden="true">‹</span>
+                <span class="av" aria-hidden="true">К</span>
+                <span class="who"><b>Кира</b><span>вы ещё не переписывались</span></span>
+              </div>
+              <div class="chat" style="height:6.6em">
+                <div class="inner" style="transform:none">
+                  <p class="day">начало диалога</p>
+                </div>
+              </div>
+              <div class="kb still">
+                <div class="kb-head">
+                  <span class="t"><span class="bk" aria-hidden="true">‹</span>Первое сообщение</span>
+                  <span class="priv">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10.5" width="16" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
+                    ушёл только повод
+                  </span>
+                </div>
+                <div class="sheet">
+                  <div class="pcard" style="background:var(--kb-panel)">
+                    <span class="k">повод</span>
+                    <span style="font-size:.88em;line-height:1.3">в профиле — Алтай и старые плёночные снимки</span>
+                  </div>
+                  <ul class="opts">
+                    <li class="opt cool on">
+                      <span class="lbl"><i aria-hidden="true"></i>сдержанный</span>
+                      <p>Кадры с Алтая отличные. Плёнка своя или сканы?</p>
+                    </li>
+                    <li class="opt fun on">
+                      <span class="lbl"><i aria-hidden="true"></i>с юмором</span>
+                      <p>Судя по профилю, вы либо фотограф, либо очень упорный турист. Какой вариант ближе?</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption>
+            <span class="mono">06 · Знакомство</span>
+            <b>Первое сообщение</b>
+            <span class="t">По открытому профилю или по поводу знакомства — тот самый барьер, на котором чаще всего останавливаются.</span>
+          </figcaption>
+        </figure>
+
+        <div class="scr-note">
+          <svg class="ladder" viewBox="0 0 20 14" aria-hidden="true"><rect x="0" y="8" width="4" height="6" rx="2"/><rect x="7" y="4" width="4" height="10" rx="2"/><rect x="14" y="0" width="4" height="14" rx="2"/></svg>
+          <span class="mono">Общее для всех шести</span>
+          <h3>Каждый экран открывается <em>по вашему нажатию</em></h3>
+          <p>Между нажатиями это обычная клавиатура: ни строки переписки никуда не уходит. И в любой момент видно, что именно было отправлено, — экран 04 доступен из любого из остальных.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
     <div class="shell">
       <div class="sec-head" data-rv="wipe">
         <span class="mono">Почему клавиатура</span>
@@ -224,75 +493,22 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)document.docum
           <ol class="steps" data-stagger>
             <li>нажать «подскажи» на клавиатуре</li>
           </ol>
+
+          <div class="vs-kb" aria-hidden="true">
+            <div class="krow">
+              <span class="dim">123</span>
+              <span class="hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 9.6 8.6 3 11l6.6 2.4L12 20l2.4-6.6L21 11l-6.6-2.4z"/></svg>подскажи</span>
+              <span class="space">пробел</span>
+              <span class="dim">⏎</span>
+            </div>
+            <p class="vs-kb-cap">этот ряд остаётся на месте в любом чате</p>
+          </div>
+
           <p class="vs-note">
             Это не про удобство. Это разница между продуктом, который открывают раз в неделю,
             и продуктом, который открывают двадцать раз в день.
           </p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="band">
-    <div class="shell">
-      <div class="sec-head" data-rv="wipe">
-        <span class="mono">Что делает</span>
-        <h2>Четыре вещи, <em>и ни одной лишней</em></h2>
-      </div>
-
-      <div class="cards" data-rv="rise" data-stagger>
-        <article class="card">
-          <span class="num">01</span>
-          <h3>Три варианта разного тона</h3>
-          <p>Не один «правильный» ответ, а три: сдержанный, тёплый, с юмором. Вы выбираете, каким хотите быть в этом разговоре.</p>
-        </article>
-        <article class="card">
-          <span class="num">02</span>
-          <h3>Переписать свой черновик</h3>
-          <p>«Смягчить», «короче», «увереннее» — про текст, который вы уже написали сами. По нашей гипотезе это самый частый сценарий.</p>
-        </article>
-        <article class="card">
-          <span class="num">03</span>
-          <h3>Что он имел в виду</h3>
-          <p>Разбор односложного «ок», долгой паузы, резкой смены тона. Несколько возможных прочтений, а не одно как истина.</p>
-        </article>
-        <article class="card">
-          <span class="num">04</span>
-          <h3>Первое сообщение</h3>
-          <p>По открытому профилю или по поводу знакомства — тот самый барьер, на котором чаще всего останавливаются.</p>
-        </article>
-      </div>
-
-      <div class="frags">
-        <figure class="frag-wrap" data-rv="rise">
-          <div class="frag" id="soften">
-            <span class="frag-title">Черновик → «смягчить»</span>
-            <div class="draftbox"><span class="cap">вы написали</span><span class="rw" data-rw></span></div>
-            <div class="kb-draft" data-softpills>
-              <span class="pill" data-sp="1">смягчить</span>
-              <span class="pill" data-sp="2">короче</span>
-              <span class="pill" data-sp="3">увереннее</span>
-            </div>
-            <div class="draftbox out on" data-outbox><span class="cap">получилось</span><span class="rw" data-rwout></span></div>
-          </div>
-          <figcaption>Пользователь остаётся автором. Продукт снимает затык, а не пишет за него.</figcaption>
-        </figure>
-
-        <figure class="frag-wrap" data-rv="rise" data-rv-delay="120">
-          <div class="frag">
-            <span class="frag-title">Разбор ответа собеседника</span>
-            <div class="draftbox"><span class="cap">вам ответили</span>ок</div>
-            <div class="arrow" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v14M6 12l6 6 6-6"/></svg>
-            </div>
-            <div class="readings" data-stagger>
-              <p class="reading"><b>01</b>Согласие без энтузиазма: план принят, но выбирали не вместе.</p>
-              <p class="reading"><b>02</b>Занята и отвечает на бегу — тогда пауза ничего не значит.</p>
-              <p class="reading"><b>03</b>Обида на что-то из прошлой переписки.</p>
-            </div>
-          </div>
-          <figcaption>Продукт не читает мысли и не делает вид, что читает: он показывает версии.</figcaption>
-        </figure>
       </div>
     </div>
   </section>
@@ -454,12 +670,15 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)document.docum
     </div>
   </section>
 
-  <section class="band band-paper2">
+  <section class="band field closing-field">
+    <img class="bg" src="https://images.unsplash.com/photo-1506377711776-dbdc2f3c20d9?auto=format&amp;fit=crop&amp;w=1800&amp;q=65"
+         alt="" aria-hidden="true" loading="lazy" width="1800" height="1000">
     <div class="shell">
       <div class="closing" data-rv="wipe">
+        <span class="mono">Заявка</span>
         <h2>Развёрнутые ответы <em>по анкете конкурса</em></h2>
-        <p class="lead">Гипотеза, аудитория, боль, формат решения, конкурентное преимущество, план по восьми неделям, функции на LLM и состав команды.</p>
-        <p style="margin-top:26px"><a class="btn btn-dark" href="application.html">Открыть заявку
+        <p class="lead">Гипотеза, аудитория, боль, формат решения, конкурентное преимущество, план по восьми неделям, функции на LLM и состав команды — одиннадцать вопросов и ответ на каждый.</p>
+        <p style="margin-top:26px"><a class="btn btn-solid" href="application.html">Открыть заявку
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a></p>
       </div>
@@ -471,7 +690,20 @@ if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)document.docum
 <footer class="site-foot">
   <div class="shell">
     <div class="foot-grid">
-      <p class="big">Клавиатура для смелых разговоров</p>
+      <div>
+        <div class="foot-lock">
+          <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+            <path class="lm-body" d="M10.5 2.5H21.5A7.5 7.5 0 0 1 29 10V18A7.5 7.5 0 0 1 21.5 25.5H16.8L8 31L10.6 25.3A7.5 7.5 0 0 1 3 18V10A7.5 7.5 0 0 1 10.5 2.5Z"/>
+            <g class="lm-bars">
+              <rect x="9.2" y="15.3" width="3.2" height="5.2" rx="1.6"/>
+              <rect x="14.4" y="12.1" width="3.2" height="8.4" rx="1.6"/>
+              <rect x="19.6" y="8.9" width="3.2" height="11.6" rx="1.6"/>
+            </g>
+          </svg>
+          <span class="wm">Тон<small>рабочее название</small></span>
+        </div>
+        <p class="big">Клавиатура для смелых разговоров</p>
+      </div>
       <nav class="foot-links" aria-label="Ссылки">
         <a href="index.html">Продукт</a>
         <a href="application.html">Заявка</a>

@@ -1433,3 +1433,473 @@ h1, h2, h3, h4, .facts dd, .brandmark .wm, .edges .n,
   font-variant-numeric: lining-nums;
   font-feature-settings: "lnum" 1;
 }
+
+
+/* ==========================================================================
+   ЛОГОТИП
+   Знак — клавиша, которая одновременно реплика: скруглённый квадрат
+   с хвостом облачка, внутри три полосы восходящей интонации (три тона).
+   Две краски и всё: тело и выворотка задаются переменными, поэтому
+   один и тот же файл работает на бумаге, на малиновом поле и на туши.
+   ========================================================================== */
+
+.logo-mark{ width:38px; height:38px; flex:none; display:block }
+.logo-mark .lm-body{ fill:var(--logo-body, var(--brand)) }
+.logo-mark .lm-bars{ fill:var(--logo-knock, var(--panel)) }
+
+.brandmark{ --logo-body:var(--brand); --logo-knock:var(--panel) }
+.on-brand .brandmark{ --logo-body:var(--hero-ink); --logo-knock:var(--hero-bg) }
+.site-foot{ --logo-body:#FFF2F6; --logo-knock:#23101A }
+:root[data-theme="dark"] .site-foot{ --logo-knock:#100A0D }
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .site-foot{ --logo-knock:#100A0D } }
+
+.brandmark:hover .logo-mark{ transform:translateY(-2px) }
+.logo-mark{ transition:transform .2s var(--ease-soft) }
+
+/* замок в подвале — крупнее и с подписью */
+.foot-lock{ display:flex; align-items:center; gap:14px; margin-bottom:18px }
+.foot-lock .logo-mark{ width:46px; height:46px }
+.foot-lock .wm{
+  font-family:var(--font-display); font-weight:800; font-size:30px;
+  letter-spacing:-.02em; color:#fff; line-height:1;
+}
+.foot-lock .wm small{
+  display:block; font-family:var(--font-mono); font-weight:400;
+  font-size:9.5px; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--hero-ink-2); margin-top:3px;
+}
+
+/* ---------- тональная лесенка: сигнатурный элемент ---------- */
+
+.ladder{ width:19px; height:13px; flex:none }
+.ladder rect{ fill:currentColor }
+
+/* ---------- чипы возможностей в первом экране ---------- */
+
+.caps{
+  display:flex; flex-wrap:wrap; gap:8px;
+  margin-top:26px;
+}
+.caps li{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:7px 15px 8px; border-radius:99px;
+  border:1px solid var(--hero-line);
+  background:rgba(255,255,255,.08);
+  font-size:14.5px; color:var(--hero-ink); line-height:1.25;
+}
+.caps li .ladder{ width:15px; height:10px; color:var(--hero-ink-2) }
+.caps li i{ width:7px; height:7px; border-radius:50%; background:currentColor; flex:none; opacity:.75 }
+@media (max-width:620px){
+  .caps{ gap:6px; margin-top:20px }
+  .caps li{ font-size:13px; padding:5px 12px 6px }
+}
+
+/* ---------- фотографии ---------- */
+
+.shot{
+  margin:38px 0 0; border-radius:24px; overflow:hidden; position:relative;
+  background:var(--paper-2); box-shadow:var(--shadow-s);
+}
+.shot img{
+  display:block; width:100%; height:clamp(240px, 34vw, 420px);
+  object-fit:cover; object-position:58% 44%;
+}
+.shot::after{
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(96deg, rgba(18,7,12,.90) 0%, rgba(18,7,12,.72) 34%, rgba(18,7,12,.30) 66%, rgba(18,7,12,.10) 100%);
+}
+.shot figcaption{
+  position:absolute; left:0; bottom:0; z-index:2;
+  padding:30px 34px 32px; max-width:52ch;
+  color:#FFF2F6;
+}
+.shot figcaption .mono{ color:var(--brand-lift); display:block; margin-bottom:10px }
+.shot figcaption q{
+  font-family:var(--font-display); font-style:italic; font-weight:700;
+  font-size:clamp(21px, 2.7vw, 32px); line-height:1.18; letter-spacing:-.015em;
+  quotes:"«" "»"; display:block;
+}
+.shot figcaption p{ margin-top:12px; font-size:15px; color:var(--hero-ink-2); max-width:46ch }
+
+.shot-side{
+  margin:0; border-radius:20px; overflow:hidden; position:relative;
+  box-shadow:var(--shadow-s); background:var(--paper-2);
+}
+.shot-side img{ display:block; width:100%; height:clamp(200px,26vw,300px); object-fit:cover }
+.shot-side figcaption{
+  padding:16px 20px 20px; font-size:14.5px; color:var(--ink-3);
+  background:var(--panel);
+}
+
+@media (max-width:620px){
+  .shot figcaption{ padding:22px 22px 24px }
+  .shot img{ height:300px }
+}
+
+/* ---------- лента экранов приложения ---------- */
+
+.screens{
+  display:grid; gap:26px 22px;
+  grid-template-columns:repeat(auto-fit, minmax(302px, 1fr));
+  align-items:start;
+}
+.scr-card{ margin:0; display:flex; flex-direction:column; gap:16px }
+.scr-card .device{ font-size:clamp(9.4px, 1.1vw, 11.3px); width:27.5em; max-width:100%; margin-inline:auto }
+.scr-card figcaption{ display:flex; flex-direction:column; gap:6px }
+.scr-card figcaption .mono{ color:var(--brand) }
+.scr-card figcaption b{
+  font-family:var(--font-display); font-weight:700; font-size:19px;
+  line-height:1.2; letter-spacing:-.012em;
+}
+.scr-card figcaption span.t{ font-size:15px; color:var(--ink-2); line-height:1.45 }
+
+/* экран без чата: настройки и прозрачность */
+.pane{
+  background:var(--scr); flex:1; display:flex; flex-direction:column;
+  gap:.7em; padding:1em .95em 1.2em; color:var(--ink);
+}
+.pane .ttl{
+  display:flex; align-items:center; gap:.55em;
+  font-family:var(--font-mono); font-size:.7em; letter-spacing:.13em;
+  text-transform:uppercase; color:var(--ink-3);
+}
+.pane .ttl b{
+  font-family:var(--font-display); font-size:1.55em; letter-spacing:-.01em;
+  color:var(--ink); text-transform:none; font-weight:700; letter-spacing:0;
+}
+.pcard{
+  background:var(--scr-chat); border-radius:.9em; padding:.7em .8em .75em;
+  display:flex; flex-direction:column; gap:.4em;
+}
+.pcard .k{
+  font-family:var(--font-mono); font-size:.62em; letter-spacing:.13em;
+  text-transform:uppercase; color:var(--ink-3);
+}
+.pcard .msg{
+  background:var(--bub-in); border-radius:.7em; padding:.4em .6em;
+  font-size:.88em; line-height:1.35; display:flex; gap:.5em; align-items:baseline;
+}
+.pcard .msg em{ font-style:normal; font-family:var(--font-mono); font-size:.72em; color:var(--ink-3); flex:none }
+.pcard .no{ display:flex; gap:.5em; align-items:flex-start; font-size:.85em; color:var(--ink-3); line-height:1.35 }
+.pcard .no svg{ width:1em; height:1em; flex:none; margin-top:.18em; stroke:currentColor; fill:none; stroke-width:2.4 }
+
+.prow{
+  display:flex; align-items:center; gap:.7em;
+  padding:.55em .1em; font-size:.88em; line-height:1.3;
+}
+.prow span{ flex:1 }
+.prow + .prow{ border-top:1px solid var(--scr-line) }
+.sw{
+  width:2.5em; height:1.45em; border-radius:99px; flex:none;
+  background:var(--kb-bg); position:relative;
+}
+.sw::after{
+  content:""; position:absolute; top:.16em; left:.18em;
+  width:1.12em; height:1.12em; border-radius:50%; background:var(--scr);
+  box-shadow:0 1px 2px rgba(0,0,0,.3);
+}
+.sw.on{ background:var(--brand) }
+.sw.on::after{ left:auto; right:.18em; background:#fff }
+
+.seg{
+  display:flex; gap:.2em; background:var(--kb-bg); border-radius:.7em; padding:.2em;
+}
+.seg span{
+  flex:1; text-align:center; padding:.4em 0 .45em; border-radius:.55em;
+  font-size:.85em; color:var(--ink-2);
+}
+.seg span.on{ background:var(--scr); color:var(--ink); font-weight:600; box-shadow:0 1px 2px rgba(0,0,0,.14) }
+
+.sld{ display:flex; flex-direction:column; gap:.45em }
+.sld .track{ height:.42em; border-radius:99px; background:var(--kb-bg); position:relative }
+.sld .track i{
+  position:absolute; top:50%; left:62%; transform:translate(-50%,-50%);
+  width:1.05em; height:1.05em; border-radius:50%; background:var(--brand);
+  box-shadow:0 0 0 .22em var(--brand-tint);
+}
+.sld .ends{
+  display:flex; justify-content:space-between;
+  font-family:var(--font-mono); font-size:.62em; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--ink-3);
+}
+
+.note-line{
+  font-size:.76em; line-height:1.35; color:var(--ink-3);
+  display:flex; gap:.45em; align-items:flex-start; padding:0 .2em;
+}
+.note-line svg{ width:1.05em; height:1.05em; flex:none; margin-top:.15em; stroke:currentColor; fill:none; stroke-width:1.9 }
+
+/* панель клавиатуры в статичных экранах */
+.kb.still{ min-height:0; padding-bottom:.55em }
+.kb.still .sheet{ position:static; opacity:1; transform:none; pointer-events:auto; padding:0 }
+.kb.still .sheet::before{ display:none }
+.kb .rowpills{ display:flex; gap:.3em; flex-wrap:wrap; padding:0 .1em }
+.kb .rowpills .pill{ font-size:.78em }
+.kb .kb-foot{
+  display:flex; gap:.35em; align-items:center; padding:.15em .1em 0;
+}
+.kb .kb-foot .ghost{
+  font-size:.78em; padding:.35em .8em; border-radius:99px;
+  background:var(--kb-key); color:var(--ink-2);
+}
+.kb .kb-foot .solid{
+  margin-left:auto; font-size:.78em; padding:.35em .95em; border-radius:99px;
+  background:var(--brand); color:#fff; font-weight:600;
+}
+
+.reads{ display:flex; flex-direction:column; gap:.35em }
+.reads .rd{
+  background:var(--kb-panel); border-radius:.75em; padding:.45em .65em .5em;
+  font-size:.87em; line-height:1.35; display:flex; gap:.55em; align-items:baseline;
+}
+.reads .rd b{ font-family:var(--font-mono); font-size:.68em; color:var(--brand); flex:none; letter-spacing:.08em }
+
+.pick{ display:flex; flex-direction:column; gap:.35em }
+.pick .why{
+  background:var(--kb-panel); border-radius:.7em; padding:.42em .6em;
+  font-size:.82em; color:var(--ink-2); line-height:1.3;
+}
+
+/* ---------- финальная малиновая полоса с фотографией ---------- */
+
+.closing-field{ position:relative; overflow:hidden; isolation:isolate }
+.closing-field .bg{
+  position:absolute; inset:0; z-index:-2; width:100%; height:100%;
+  object-fit:cover; object-position:center 38%;
+}
+.closing-field::after{
+  content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
+  background:linear-gradient(92deg, var(--hero-bg) 0%, rgba(216,30,91,.94) 46%, rgba(216,30,91,.62) 100%);
+}
+:root[data-theme="dark"] .closing-field::after{
+  background:linear-gradient(92deg, var(--hero-bg) 0%, rgba(124,11,51,.95) 46%, rgba(124,11,51,.7) 100%);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .closing-field::after{
+    background:linear-gradient(92deg, var(--hero-bg) 0%, rgba(124,11,51,.95) 46%, rgba(124,11,51,.7) 100%);
+  }
+}
+.closing-field .closing{ max-width:62ch }
+.closing-field h2{ color:var(--hero-ink) }
+.closing-field h2 em{ color:#fff }
+.closing-field .lead{ color:var(--hero-ink-2) }
+
+/* ---------- выноска у макета (приём из разобранных лендингов) ---------- */
+
+.callout-card{
+  position:absolute; z-index:4;
+  background:var(--panel); color:var(--ink);
+  border-radius:16px; padding:15px 18px 17px;
+  box-shadow:var(--shadow-l); width:244px;
+  display:flex; flex-direction:column; gap:6px;
+}
+.callout-card .mono{ color:var(--brand) }
+.callout-card p{ font-size:14px; line-height:1.4; color:var(--ink-2) }
+@media (max-width:1060px){ .callout-card{ display:none } }
+
+/* ---------- первый экран заявки: прогресс ---------- */
+
+.sheetcard .bar{
+  height:6px; border-radius:99px; background:rgba(255,255,255,.18);
+  overflow:hidden; margin:2px 0 14px;
+}
+.sheetcard .bar i{
+  display:block; height:100%; width:100%; border-radius:99px;
+  background:var(--hero-ink); transform-origin:0 50%;
+}
+.motion .sheetcard .bar i{ animation:barGrow 1.5s var(--ease) 600ms both }
+@keyframes barGrow{ from{ transform:scaleX(.06) } to{ transform:scaleX(1) } }
+
+
+/* ---------- коробки черновика внутри экрана «переписать» ---------- */
+
+.dbox{
+  background:var(--kb-panel); border-radius:.8em; padding:.5em .7em .55em;
+  font-size:.9em; line-height:1.35; color:var(--ink-2);
+}
+.dbox .cap{
+  display:block; font-family:var(--font-mono); font-size:.66em; letter-spacing:.13em;
+  text-transform:uppercase; color:var(--ink-3); margin-bottom:.25em;
+}
+.dbox.out{ background:var(--brand-tint); color:var(--ink) }
+.dbox.out .cap{ color:var(--brand) }
+.dbox.out .rw{ color:var(--ink) }
+
+/* базовое состояние — итоговое; прячет и анимирует только .motion */
+.motion [data-outbox]{ opacity:0; transition:opacity .35s var(--ease-soft) }
+.motion [data-outbox].on{ opacity:1 }
+
+/* вход чипов первого экрана */
+.motion .caps[data-a]{ animation:aRise .65s var(--ease) 520ms both }
+.motion .hero-actions[data-a]{ animation:aRise .6s var(--ease) 660ms both }
+
+/* стрелка вправо в финальной кнопке уходит вправо, а не вниз */
+.closing-field .btn-solid:hover svg{ transform:translateX(4px) }
+.closing-field .closing > .mono{ color:var(--hero-ink-2); display:block; margin-bottom:14px }
+
+/* заголовок секции экранов на второй бумаге */
+.screens .device{ box-shadow:var(--shadow-l), inset 0 0 0 .09em rgba(255,255,255,.14) }
+
+/* статичные экраны выравниваются по одной высоте: чат тянется,
+   иначе подписи под телефонами идут по разным линиям */
+.scr-card .screen{ min-height:29em }
+.scr-card .chat{ flex:1 1 auto }
+.scr-card .chat .inner{ position:static; transform:none }
+.scr-note{ justify-content:center }
+
+@media (max-width:520px){
+  .screens{ grid-template-columns:minmax(0,1fr) }
+  .scr-card .device{ font-size:11.6px }
+}
+
+/* ---------- заявка: выноска у карточки анкеты и экраны внутри ответа ---------- */
+
+.app-figure{ position:relative }
+.q-screens{ margin-top:30px; max-width:none }
+.q .body .shot-side{ margin-top:6px }
+.qa-layout .closing-field{ padding:78px 0 84px }
+.closing-field{ padding:88px 0 96px }
+
+
+/* ---------- карточка-заметка в свободной ячейке ленты экранов ---------- */
+
+.scr-note{
+  background:var(--ink); color:var(--on-dark);
+  border-radius:20px; padding:28px 28px 30px;
+  display:flex; flex-direction:column; gap:12px;
+  align-self:stretch;
+}
+:root[data-theme="dark"] .scr-note{ background:#2C1A24 }
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .scr-note{ background:#2C1A24 } }
+.scr-note .mono{ color:var(--brand-lift) }
+.scr-note h3{ color:var(--on-dark); font-size:23px; line-height:1.15 }
+.scr-note h3 em{ font-style:italic; color:var(--brand-lift) }
+.scr-note p{ color:var(--hero-ink-2); font-size:15.5px; line-height:1.5 }
+.scr-note .ladder{ width:28px; height:19px; color:var(--brand-lift); margin-bottom:2px }
+
+/* узкая выноска у прототипа: помещается в поле слева от телефона */
+.callout-card.slim{
+  width:172px; right:calc(100% + 16px); bottom:118px;
+  padding:13px 15px 15px;
+}
+.callout-card.slim p{ font-size:13px; line-height:1.38 }
+
+/* выноска, встающая под карточкой анкеты: в первом экране заявки
+   для плавающей карточки нет свободного поля — она бы закрыла список */
+.callout-card.stack{
+  position:static; width:auto; max-width:none; margin-top:14px;
+  background:rgba(255,255,255,.07); color:var(--hero-ink);
+  border:1px solid var(--hero-line); box-shadow:none;
+}
+.callout-card.stack .mono{ color:var(--hero-ink-2) }
+.callout-card.stack p{ color:var(--hero-ink) }
+
+.closing .lead{ margin-top:18px }
+.closing > .mono + h2{ margin-top:0 }
+
+/* ---------- 390: чипы одной строкой, иначе продукт уезжает за экран ----------
+   Четыре-пять чипов в переносе съедали 140 px и сдвигали телефон
+   на 740-ю точку при высоте экрана 844. Одна прокручиваемая строка
+   сохраняет все пункты и стоит 40 px. */
+@media (max-width:620px){
+  .caps{
+    flex-wrap:nowrap; overflow-x:auto; overscroll-behavior-x:contain;
+    scrollbar-width:none; -ms-overflow-style:none;
+    margin-top:18px; padding:2px 22px 6px; gap:7px;
+    margin-inline:-22px; width:calc(100% + 44px);
+    -webkit-mask-image:linear-gradient(90deg, transparent 0, #000 22px, #000 calc(100% - 30px), transparent 100%);
+            mask-image:linear-gradient(90deg, transparent 0, #000 22px, #000 calc(100% - 30px), transparent 100%);
+  }
+  .caps::-webkit-scrollbar{ display:none }
+  .caps li{ flex:none; white-space:nowrap }
+  .hero-actions{ margin-top:20px }
+}
+
+/* ---------- фрагмент нижнего ряда клавиатуры в карточке сравнения ----------
+   Один шаг против шести оставлял в правой карточке пустую половину.
+   Вместо пустоты — тот самый ряд, о котором идёт речь. */
+
+.vs-kb{
+  margin-top:26px; font-size:13px;
+  background:var(--kb-bg); border-radius:1.2em; padding:.75em .6em .7em;
+}
+.vs-card.win .vs-kb{ background:rgba(255,255,255,.07) }
+.vs-kb .krow{ display:flex; gap:.28em; justify-content:center }
+.vs-kb .krow span{
+  flex:1; min-width:0; text-align:center;
+  background:rgba(255,255,255,.12); color:var(--on-dark);
+  border-radius:.45em; padding:.62em 0 .66em;
+  font-size:.95em; line-height:1;
+  display:flex; align-items:center; justify-content:center;
+}
+.vs-kb .krow span.dim{ flex:.9; color:var(--hero-ink-2) }
+.vs-kb .krow span.space{ flex:2.6 }
+.vs-kb .krow span.hint{
+  flex:2.4; background:var(--brand); color:#fff; font-weight:600; gap:.4em;
+}
+.vs-kb .krow span.hint svg{ width:1.05em; height:1.05em; fill:currentColor }
+.vs-kb-cap{
+  margin-top:.7em; text-align:center;
+  font-family:var(--font-mono); font-size:.75em; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--hero-ink-2);
+}
+.motion .vs-card.win.rv-in .vs-kb .krow span.hint{ animation:hintPulse 1.6s ease-out 1.2s 2 }
+
+/* в тёмной теме обе карточки сравнения были почти одного цвета —
+   а весь смысл блока в том, что они разные */
+:root[data-theme="dark"] .vs-card.win{ background:#3A1122; box-shadow:inset 0 0 0 1px rgba(255,78,128,.32), var(--shadow-s) }
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .vs-card.win{ background:#3A1122; box-shadow:inset 0 0 0 1px rgba(255,78,128,.32), var(--shadow-s) }
+}
+
+/* ---------- 390: рельса анкеты одной прокручиваемой строкой ----------
+   Одиннадцать чипов в переносе занимали восемь строк и почти три
+   сотни точек до первого ответа. */
+@media (max-width:620px){
+  .rail ol{
+    flex-wrap:nowrap; overflow-x:auto; overscroll-behavior-x:contain;
+    scrollbar-width:none; -ms-overflow-style:none;
+    padding:2px 16px 8px; margin-inline:-16px; width:calc(100% + 32px);
+    -webkit-mask-image:linear-gradient(90deg, transparent 0, #000 16px, #000 calc(100% - 28px), transparent 100%);
+            mask-image:linear-gradient(90deg, transparent 0, #000 16px, #000 calc(100% - 28px), transparent 100%);
+  }
+  .rail ol::-webkit-scrollbar{ display:none }
+  .rail li{ flex:none }
+  .rail a{ white-space:nowrap }
+}
+
+/* ---------- тёмная тема: у карточек должен быть край ----------
+   --panel (#20141C) на --paper (#150C11) различается слабо, и в тёмной
+   теме блоки сливались с полосой. Тонкий кант возвращает границу. */
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .vs-card:not(.win),
+  :root:not([data-theme="light"]) .person,
+  :root:not([data-theme="light"]) .notecard,
+  :root:not([data-theme="light"]) .joinbox,
+  :root:not([data-theme="light"]) .drafting,
+  :root:not([data-theme="light"]) .fnpane,
+  :root:not([data-theme="light"]) .defs > div,
+  :root:not([data-theme="light"]) .shot-side figcaption{
+    box-shadow:inset 0 0 0 1px var(--line), var(--shadow-s);
+  }
+}
+:root[data-theme="dark"] .vs-card:not(.win),
+:root[data-theme="dark"] .person,
+:root[data-theme="dark"] .notecard,
+:root[data-theme="dark"] .joinbox,
+:root[data-theme="dark"] .drafting,
+:root[data-theme="dark"] .fnpane,
+:root[data-theme="dark"] .defs > div,
+:root[data-theme="dark"] .shot-side figcaption{
+  box-shadow:inset 0 0 0 1px var(--line), var(--shadow-s);
+}
+
+/* Колонка auto считается по max-content содержимого, а выноска под
+   карточкой анкеты даёт max-content в целое предложение: правая колонка
+   раздувалась до 870 px и сплющивала заголовок слева до 234 px.
+   Колонке задана явная ширина. */
+@media (min-width:1061px){
+  .app-hero .hero-grid{ grid-template-columns:minmax(0,1fr) 420px }
+}
+.app-figure{ width:100% }
+.app-figure .sheetcard{ width:100% }

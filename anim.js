@@ -314,8 +314,8 @@
     var rwOut = $('[data-rwout]', soften);
     var outBox = $('[data-outbox]', soften);
     var pills = $$('[data-sp]', soften);
-    var SRC = 'ты вообще собираешься отвечать или нет';
-    var DST = 'Не хочу навязываться — просто напиши, когда будет минутка.';
+    var SRC = 'у меня вообще-то выходные, почему всегда я';
+    var DST = 'Могу взяться в понедельник с утра — выходные уже занял. Если горит, давай обсудим, что сдвинуть.';
 
     function words(el, text) {
       el.textContent = '';
