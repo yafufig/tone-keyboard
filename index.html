@@ -12,7 +12,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;0,800;1,500;1,700;1,800&family=JetBrains+Mono:wght@400;500;600&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<script>try{var t=localStorage.getItem('tone-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<script>try{var t=localStorage.getItem('tone-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}
+if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion');</script>
 </head>
 <body>
 
@@ -36,82 +37,75 @@
       </button>
     </header>
 
-    <section class="hero">
+    <section class="hero" data-hero>
       <div class="hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow mono">
+          <p class="eyebrow mono" data-a="1">
             <span>Android · клавиатура</span><span class="sep" aria-hidden="true"></span>
             <span>Sber500xDisrupt</span><span class="sep" aria-hidden="true"></span>
             <span>гипотеза Сбера №27</span>
           </p>
 
-          <h1 class="hero-title">Написал, стёр,<em>написал заново</em></h1>
+          <h1 class="hero-title">
+            <span class="ln" data-a="2"><span>Написал, стёр,</span></span>
+            <em class="ln" data-a="3"><span>написал заново</span></em>
+          </h1>
 
-          <p class="hero-lede">
+          <p class="hero-lede" data-a="4">
             Клавиатура, которая по одному нажатию предлагает <b>три варианта ответа разного тона</b> —
             прямо в том чате, где вы застряли. Без скриншотов, без перехода в другое приложение,
             без чтения переписки в фоне.
           </p>
 
-          <div class="hero-actions">
+          <div class="hero-actions" data-a="5">
             <a class="btn btn-solid" href="#how">
               Как это выглядит
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
             </a>
             <a class="btn btn-ghost" href="application.html">Читать заявку</a>
           </div>
+
         </div>
 
-        <figure class="hero-device" id="how">
-          <div class="device">
+        <figure class="hero-device" id="how" data-a="7">
+          <figcaption class="demo-cap">
+            <span class="mono">Прототип интерфейса · сцена идёт сама</span>
+            <span class="cap-row">
+              Один цикл: пришёл сухой ответ, человек написал и стёр, нажал одну кнопку.
+              <button class="demo-pause" type="button" id="demo-pause" aria-pressed="false" aria-label="Остановить показ">
+                <svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="7" y="5" width="3.6" height="14" rx="1.2"/><rect x="13.4" y="5" width="3.6" height="14" rx="1.2"/></svg>
+                <svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5 19 12 8 18.5z"/></svg>
+              </button>
+            </span>
+          </figcaption>
+          <div class="device" id="demo">
             <div class="screen">
 
               <div class="scr-top">
                 <span class="back" aria-hidden="true">‹</span>
                 <span class="av" aria-hidden="true">А</span>
-                <span class="who"><b>Аня</b><span>была в сети недавно</span></span>
+                <span class="who"><b>Аня</b><span class="status" data-status>была в сети недавно</span></span>
               </div>
 
               <div class="chat">
-                <p class="day">сегодня</p>
-                <div class="bub out">сходим в субботу на тот фестиваль? там как раз твои играют<time>22:09</time></div>
-                <div class="bub in flat">ок<time>22:41</time></div>
+                <div class="inner" data-inner>
+                  <p class="day">сегодня</p>
+                  <div class="bub in">привет! ты как<time>21:47</time></div>
+                  <div class="bub out">привет) нормально, вот думаю про выходные<time>21:49</time></div>
+                  <div class="bub out">есть два билета на субботу, на фестиваль. там как раз твои играют<time>21:52</time></div>
+                  <div class="bub in flat" data-b="2">ок<time>22:41</time></div>
+                  <div class="bub out" data-b="3"><span data-sent></span><time>22:42</time></div>
+                </div>
               </div>
 
               <div class="composer">
-                <span class="fld">Сообщение<span class="caret" aria-hidden="true"></span></span>
-                <span class="send" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 20.5 21 12 3 3.5 3 10l12 2-12 2z"/></svg></span>
+                <span class="fld"><span class="ph" data-ph>Сообщение</span><span class="txt" data-typed></span><span class="caret" aria-hidden="true"></span></span>
+                <span class="send" data-send aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 20.5 21 12 3 3.5 3 10l12 2-12 2z"/></svg></span>
               </div>
 
               <div class="kb">
-                <div class="kb-head">
-                  <span class="t">Три варианта ответа</span>
-                  <span class="priv">
-                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10.5" width="16" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
-                    отправлено 2 сообщения
-                  </span>
-                </div>
-
-                <ul class="opts">
-                  <li class="opt cool">
-                    <span class="lbl">сдержанный</span>
-                    <p>Договорились. Скину время, как гляну расписание.</p>
-                  </li>
-                  <li class="opt warm">
-                    <span class="lbl">тёплый</span>
-                    <p>Отлично) Тогда беру билеты, а ты выбираешь, кого слушаем первыми.</p>
-                  </li>
-                  <li class="opt fun">
-                    <span class="lbl">с юмором</span>
-                    <p>«Ок» звучит как приговор. Разреши поверить, что это согласие.</p>
-                  </li>
-                </ul>
-
-                <div class="kb-draft">
-                  <span class="cap">черновик:</span>
-                  <span class="pill">смягчить</span>
-                  <span class="pill">короче</span>
-                  <span class="pill">увереннее</span>
+                <div class="strip" data-strip aria-hidden="true">
+                  <span>Ок</span><span>Хорошо</span><span>Договорились</span>
                 </div>
 
                 <div class="keys" aria-hidden="true">
@@ -120,16 +114,43 @@
                   <div class="krow"><span class="wide dim">⇧</span><span>я</span><span>ч</span><span>с</span><span>м</span><span>и</span><span>т</span><span>ь</span><span>б</span><span>ю</span><span class="wide dim">⌫</span></div>
                   <div class="krow">
                     <span class="dim">123</span>
-                    <span class="hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 9.6 8.6 3 11l6.6 2.4L12 20l2.4-6.6L21 11l-6.6-2.4z"/></svg>подскажи</span>
+                    <span class="hint" data-hintkey><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 9.6 8.6 3 11l6.6 2.4L12 20l2.4-6.6L21 11l-6.6-2.4z"/></svg>подскажи</span>
                     <span class="space">пробел</span>
                     <span class="dim">⏎</span>
                   </div>
                 </div>
+
+                <div class="sheet" data-sheet>
+                  <div class="kb-head">
+                    <span class="t"><span class="bk" aria-hidden="true">‹</span>Ответ · три тона</span>
+                    <span class="priv">
+                      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10.5" width="16" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
+                      отправлено 2 сообщения
+                    </span>
+                  </div>
+
+                  <ul class="opts">
+                    <li class="opt cool" data-opt="1">
+                      <span class="lbl"><i aria-hidden="true"></i>сдержанный</span>
+                      <p>Договорились. Скину время, как гляну расписание.</p>
+                    </li>
+                    <li class="opt warm" data-opt="2">
+                      <span class="lbl"><i aria-hidden="true"></i>тёплый</span>
+                      <p>Отлично) Тогда беру билеты, а ты выбираешь, кого слушаем первыми.</p>
+                    </li>
+                    <li class="opt fun" data-opt="3">
+                      <span class="lbl"><i aria-hidden="true"></i>с юмором</span>
+                      <p>«Ок» звучит как приговор. Разреши поверить, что это согласие.</p>
+                    </li>
+                  </ul>
+                </div>
+
+                <span class="tap" data-tap aria-hidden="true"></span>
               </div>
 
             </div>
           </div>
-          <figcaption class="visually-hidden"></figcaption>
+
         </figure>
       </div>
     </section>
@@ -141,21 +162,21 @@
 
   <section class="band first">
     <div class="shell">
-      <div class="sec-head">
+      <div class="sec-head" data-rv="wipe">
         <span class="mono">Момент</span>
         <h2>Он знает, что хочет сказать.<br><em>Он не знает, как.</em></h2>
       </div>
 
       <div class="split">
-        <div class="drafting">
-          <p class="d struck">Привет! Классное фото с гор, где это снято?</p>
-          <p class="d struck">о, ты тоже была на Алтае?</p>
-          <p class="d struck">привет)</p>
-          <p class="d live">Привет<span class="caret" aria-hidden="true"></span></p>
+        <div class="drafting" data-rv="scale" data-draft>
+          <p class="d struck" data-dl="1">Привет! Классное фото с гор, где это снято?</p>
+          <p class="d struck" data-dl="2">о, ты тоже была на Алтае?</p>
+          <p class="d struck" data-dl="3">привет)</p>
+          <p class="d live" data-dl="4"><span data-dtype>Привет</span><span class="caret" aria-hidden="true"></span></p>
           <p class="meta">четвёртая попытка · одиннадцать минут · не отправлено</p>
         </div>
 
-        <div class="split-text">
+        <div class="split-text" data-rv="rise" data-stagger>
           <p class="lead">
             Переписка с высокой ставкой — это не только знакомства. Попросить о повышении,
             отказать не обидев, извиниться, написать первым спустя месяц молчания.
@@ -176,31 +197,31 @@
 
   <section class="band band-paper2">
     <div class="shell">
-      <div class="sec-head">
+      <div class="sec-head" data-rv="wipe">
         <span class="mono">Почему клавиатура</span>
-        <h2>Шесть действий против <em>одного</em></h2>
-        <p>Rizz, YourMove, Wingman и десятки их клонов живут в отдельном приложении и работают через скриншот. Клавиатура уже открыта — она и есть то место, где человек застревает.</p>
+        <h2>Скриншот против <em>одного нажатия</em></h2>
+        <p>Подсказчики вроде YourMove, Wingman и клонов Rizz бывают и в виде клавиатуры. Но контекст переписки они получают одинаково — из скриншота, который пользователь снимает руками. На iOS иначе и нельзя: расширение клавиатуры видит только текст рядом с курсором, а не историю сообщений.</p>
       </div>
 
       <div class="versus">
-        <div class="vs-card">
-          <span class="tag">Приложение-подсказчик</span>
+        <div class="vs-card" data-rv="rise">
+          <span class="tag">Путь через скриншот</span>
           <h3>Пока вы вернулись, момент прошёл</h3>
-          <ol class="steps">
-            <li>выйти из мессенджера</li>
-            <li>сделать скриншот переписки</li>
-            <li>загрузить его в приложение</li>
-            <li>дождаться вариантов</li>
-            <li>скопировать нужный</li>
-            <li>вернуться в чат и вставить</li>
+          <ol class="steps" data-stagger>
+            <li>снять скриншот переписки</li>
+            <li>открыть панель подсказчика</li>
+            <li>отдать ей снимок</li>
+            <li>дождаться разбора</li>
+            <li>скопировать нужный вариант</li>
+            <li>вернуться в поле ввода и вставить</li>
           </ol>
-          <p class="vs-note">Собеседник в это время видит «печатает» и тишину.</p>
+          <p class="vs-note">Порядок шагов отличается от приложения к приложению, но снимок экрана обязателен во всех. Собеседник в это время видит «печатает» и тишину.</p>
         </div>
 
-        <div class="vs-card win">
+        <div class="vs-card win" data-rv="rise" data-rv-delay="120">
           <span class="tag">Тон</span>
           <h3>Одно касание, не выходя из чата</h3>
-          <ol class="steps">
+          <ol class="steps" data-stagger>
             <li>нажать «подскажи» на клавиатуре</li>
           </ol>
           <p class="vs-note">
@@ -214,12 +235,12 @@
 
   <section class="band">
     <div class="shell">
-      <div class="sec-head">
+      <div class="sec-head" data-rv="wipe">
         <span class="mono">Что делает</span>
         <h2>Четыре вещи, <em>и ни одной лишней</em></h2>
       </div>
 
-      <div class="cards">
+      <div class="cards" data-rv="rise" data-stagger>
         <article class="card">
           <span class="num">01</span>
           <h3>Три варианта разного тона</h3>
@@ -243,27 +264,28 @@
       </div>
 
       <div class="frags">
-        <figure class="frag-wrap">
-          <div class="frag">
+        <figure class="frag-wrap" data-rv="rise">
+          <div class="frag" id="soften">
             <span class="frag-title">Черновик → «смягчить»</span>
-            <div class="draftbox"><span class="cap">вы написали</span>ты вообще собираешься отвечать или нет</div>
-            <div class="arrow" aria-hidden="true">↓</div>
-            <div class="kb-draft">
-              <span class="pill on">смягчить</span>
-              <span class="pill">короче</span>
-              <span class="pill">увереннее</span>
+            <div class="draftbox"><span class="cap">вы написали</span><span class="rw" data-rw></span></div>
+            <div class="kb-draft" data-softpills>
+              <span class="pill" data-sp="1">смягчить</span>
+              <span class="pill" data-sp="2">короче</span>
+              <span class="pill" data-sp="3">увереннее</span>
             </div>
-            <div class="draftbox" style="color:var(--ink)"><span class="cap">получилось</span>Не хочу навязываться — просто напиши, когда будет минутка.</div>
+            <div class="draftbox out on" data-outbox><span class="cap">получилось</span><span class="rw" data-rwout></span></div>
           </div>
           <figcaption>Пользователь остаётся автором. Продукт снимает затык, а не пишет за него.</figcaption>
         </figure>
 
-        <figure class="frag-wrap">
+        <figure class="frag-wrap" data-rv="rise" data-rv-delay="120">
           <div class="frag">
             <span class="frag-title">Разбор ответа собеседника</span>
             <div class="draftbox"><span class="cap">вам ответили</span>ок</div>
-            <div class="arrow" aria-hidden="true">↓</div>
-            <div class="readings">
+            <div class="arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v14M6 12l6 6 6-6"/></svg>
+            </div>
+            <div class="readings" data-stagger>
               <p class="reading"><b>01</b>Согласие без энтузиазма: план принят, но выбирали не вместе.</p>
               <p class="reading"><b>02</b>Занята и отвечает на бегу — тогда пауза ничего не значит.</p>
               <p class="reading"><b>03</b>Обида на что-то из прошлой переписки.</p>
@@ -277,38 +299,38 @@
 
   <section class="band band-paper2">
     <div class="shell">
-      <div class="sec-head">
+      <div class="sec-head" data-rv="wipe">
         <span class="mono">Отличия</span>
         <h2>Чем это не похоже <em>на то, что уже есть</em></h2>
       </div>
 
-      <ol class="edges">
+      <ol class="edges" data-rv="rise" data-stagger>
         <li>
           <span class="n" aria-hidden="true">1</span>
           <div>
-            <h3>Мы в моменте, конкуренты — после него</h3>
-            <p>Все существующие решения требуют выйти из чата. Мы отвечаем внутри клавиатуры за одно касание. Отсюда и частота: подсказка нужна не в одном разговоре из ста, а в каждом, где человек задумался перед отправкой.</p>
+            <h3>Русский — не девятый язык в списке</h3>
+            <p>ИИ в клавиатуре уже есть: инструменты переписывания текста у Google, Microsoft, Samsung и Apple. Только в списке заявленных ими языков русского нет, а доступны они на ограниченном наборе устройств. Дейтинг-подсказчики заявляют английский, испанский, немецкий. Русская переписка — не побочный случай, а единственный, под который мы делаем продукт.</p>
           </div>
         </li>
         <li>
           <span class="n" aria-hidden="true">2</span>
           <div>
-            <h3>Русский язык и русская интонация</h3>
-            <p>Сервисы натренированы на английских переписках и на русском выдают кальку. Разница между «ты» и «вы», между дружеским и заигрывающим тоном в русском устроена иначе — универсальные модели её не держат.</p>
+            <h3>Мы в моменте, подсказчики — после него</h3>
+            <p>Их путь проходит через скриншот, который пользователь снимает руками. Мы отвечаем внутри клавиатуры за одно касание. Отсюда и частота: подсказка нужна не в одном разговоре из ста, а в каждом, где человек задумался перед отправкой.</p>
           </div>
         </li>
         <li>
           <span class="n" aria-hidden="true">3</span>
           <div>
-            <h3>Помочь дожать своё, а не сказать за тебя</h3>
-            <p>Конкуренты позиционируются как генератор реплик, и пользователь быстро упирается в ощущение, что переписывается не он. У нас главный сценарий — переписывание собственного черновика.</p>
+            <h3>Тон подписан у каждого варианта</h3>
+            <p>В существующих сервисах тон задаётся заранее, в настройках, и ответы приходят без пометок. Мы показываем три варианта рядом и подписываем каждый: вы выбираете не «лучший ответ», а то, каким хотите быть в этом разговоре.</p>
           </div>
         </li>
         <li>
           <span class="n" aria-hidden="true">4</span>
           <div>
-            <h3>Не только знакомства</h3>
-            <p>Конкуренты заперты в дейтинге и теряют пользователя, когда он перестаёт знакомиться. Наша механика одинаково работает в рабочих, семейных и конфликтных переписках.</p>
+            <h3>Помочь дожать своё, а не сказать за тебя</h3>
+            <p>Дейтинг-подсказчики продают именно генерацию реплик за пользователя и оптимизированы под флирт. У нас главный сценарий — переписывание собственного черновика, и та же механика работает в рабочих, семейных и конфликтных переписках.</p>
           </div>
         </li>
       </ol>
@@ -317,7 +339,7 @@
 
   <section class="band">
     <div class="shell">
-      <div class="privacy">
+      <div class="privacy" data-rv="scale">
         <div>
           <span class="mono">Приватность</span>
           <h2>Продукт, который читает все ваши чаты, <em>не имеет права на существование</em></h2>
@@ -326,7 +348,7 @@
             а не в текст пользовательского соглашения. Всё остальное время это обычная клавиатура.
           </p>
         </div>
-        <ul class="pchecks">
+        <ul class="pchecks" data-stagger>
           <li>
             <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
             <span>Переписка не анализируется в фоне — ни строки, пока вы не нажали кнопку</span>
@@ -346,15 +368,15 @@
 
   <section class="field">
     <div class="shell band-tight">
-      <div class="sec-head" style="margin-bottom:0">
-        <span class="mono" style="color:var(--hero-ink-2)">Куда целимся</span>
-        <h2 style="color:var(--hero-ink)">Номинация <em style="color:#fff">«Высокая частотность»</em></h2>
-        <p style="color:var(--hero-ink-2)">
+      <div class="sec-head aim" data-rv="wipe">
+        <span class="mono">Куда целимся</span>
+        <h2>Номинация <em>«Высокая частотность»</em></h2>
+        <p>
           Клавиатура открывается десятки раз в день. Это единственный класс продукта в списке гипотез,
           где 25+ обращений на пользователя в день возникают естественно, а не за счёт искусственных напоминаний.
         </p>
       </div>
-      <dl class="facts">
+      <dl class="facts" data-rv="rise" data-stagger>
         <div><dt>Трек</dt><dd>Sber500xDisrupt<small>Трек 1 · Social &amp; Family</small></dd></div>
         <div><dt>Гипотеза</dt><dd>№27 Сбера<small>Клавиатура для смелых разговоров</small></dd></div>
         <div><dt>Платформа</dt><dd>Android<small>iOS — вторым шагом, там расширение клавиатуры проходит модерацию</small></dd></div>
@@ -365,13 +387,13 @@
 
   <section class="band" id="team">
     <div class="shell">
-      <div class="sec-head">
+      <div class="sec-head" data-rv="wipe">
         <span class="mono">Команда</span>
         <h2>Пятеро, которые <em>уже собирали продукт вместе</em></h2>
         <p>Роли распределены и проверены на предыдущем проекте — это тот же состав, а не собранная под конкурс группа.</p>
       </div>
 
-      <div class="team">
+      <div class="team" data-rv="rise" data-stagger>
         <article class="person">
           <span class="role">CAIO · капитан</span>
           <span class="nm">Дмитрий Ярочкин</span>
@@ -401,7 +423,7 @@
         </article>
       </div>
 
-      <div class="joinbox">
+      <div class="joinbox" data-rv="rise">
         <h3>Совместный проект: JOIN — Telegram Mini App</h3>
         <p>
           Этим же составом, с теми же ролями, мы довели до работающего прототипа JOIN — приложение,
@@ -434,7 +456,7 @@
 
   <section class="band band-paper2">
     <div class="shell">
-      <div class="closing">
+      <div class="closing" data-rv="wipe">
         <h2>Развёрнутые ответы <em>по анкете конкурса</em></h2>
         <p class="lead">Гипотеза, аудитория, боль, формат решения, конкурентное преимущество, план по восьми неделям, функции на LLM и состав команды.</p>
         <p style="margin-top:26px"><a class="btn btn-dark" href="application.html">Открыть заявку
@@ -464,38 +486,7 @@
   </div>
 </footer>
 
-<style>
-/* локальные раскладки этой страницы */
-.band.first{ padding-top:196px }
-.split{ display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); gap:48px; align-items:start }
-.split-text{ display:flex; flex-direction:column; gap:16px; padding-top:6px }
-.split-text p{ color:var(--ink-2) }
-.frags{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; margin-top:38px }
-.frag-wrap{ margin:0; display:flex; flex-direction:column; gap:14px }
-.frag-wrap figcaption{ font-size:15px; color:var(--ink-3); padding:0 4px }
-.closing{ max-width:66ch }
-.closing p{ color:var(--ink-2) }
-.visually-hidden{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap }
-@media (max-width:1060px){
-  .band.first{ padding-top:170px }
-  .split{ grid-template-columns:minmax(0,1fr); gap:32px }
-}
-@media (max-width:780px){ .band.first{ padding-top:150px } }
-</style>
-
-<script>
-(function(){
-  var b = document.getElementById('theme');
-  if(!b) return;
-  b.addEventListener('click', function(){
-    var cur = document.documentElement.getAttribute('data-theme');
-    if(!cur) cur = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    var next = cur === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    try{ localStorage.setItem('tone-theme', next); }catch(e){}
-  });
-})();
-</script>
+<script src="anim.js"></script>
 
 </body>
 </html>
