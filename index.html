@@ -2,87 +2,500 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Клавиатура для смелых разговоров — заявка Sber500xDisrupt</title>
-<meta name="description" content="Подсказка приходит внутри клавиатуры за одно касание — в тот момент, когда человек написал и стёр в четвёртый раз.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Тон — клавиатура для смелых разговоров</title>
+<meta name="description" content="Клавиатура, которая подсказывает три варианта ответа разного тона прямо в чате — по нажатию, а не в фоне. Проект команды Ярочкина для Sber500xDisrupt.">
+<meta property="og:title" content="Тон — клавиатура для смелых разговоров">
+<meta property="og:description" content="Три варианта ответа разного тона прямо в клавиатуре. Одно касание вместо шести.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;700&family=Golos+Text:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;0,800;1,500;1,700;1,800&family=JetBrains+Mono:wght@400;500;600&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>:root{--accent:#E0245E}</style>
+<script>try{var t=localStorage.getItem('tone-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
 </head>
 <body>
-<div class="wrap">
 
-<header class="masthead">
-  <div class="stamp">
-    <span>Sber500xDisrupt · Трек 1</span><span class="dot"></span>
-    <span>Капитан: <b>Дмитрий Ярочкин</b></span><span class="dot"></span>
-    <span>Гипотеза Сбера №27 · Social &amp; Family</span>
-  </div>
-  <h1>Клавиатура для <span class="hl">смелых разговоров</span></h1>
-  <p class="lede">Подсказка приходит внутри клавиатуры за одно касание — в тот момент, когда человек написал и стёр в четвёртый раз.</p>
-</header>
+<a class="skip" href="#main">Перейти к содержанию</a>
 
-<div class="verdict">
-  <dl class="verdict-grid">
-    <div class="cell"><dt>Обращений в день</dt><dd><span class="big">20–50</span></dd></div>
-    <div class="cell"><dt>Целевая номинация</dt><dd>Высокая частотность<br><span style="color:var(--ink-faint);font-size:13px">1000+ DAU · 25+ обращений</span></dd></div>
-    <div class="cell"><dt>Команда</dt><dd>5 человек</dd></div>
-    <div class="cell"><dt>MVP с пользователями</dt><dd>Неделя 4</dd></div>
-  </dl>
-  <div class="weakspot">
-    <span class="tag">Слабое место</span>
-    <p>Полноценная клавиатура на iOS требует отдельного разрешения на сеть и проходит модерацию App Store. Стартуем с Android и не закладываем iOS в первые восемь недель.</p>
+<div class="field on-brand">
+  <div class="shell">
+
+    <header class="site-head">
+      <a class="brandmark" href="index.html">
+        <span class="keycap" aria-hidden="true">Т</span>
+        <span class="wm">Тон<small>рабочее название</small></span>
+      </a>
+      <nav class="site-nav" aria-label="Разделы">
+        <a href="index.html" aria-current="page">Продукт</a>
+        <a href="application.html">Заявка</a>
+      </nav>
+      <button class="theme-btn" type="button" id="theme" aria-label="Переключить тёмную тему">
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M18.8 5.2l-1.4 1.4M6.6 17.4l-1.4 1.4"/></svg>
+      </button>
+    </header>
+
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow mono">
+            <span>Android · клавиатура</span><span class="sep" aria-hidden="true"></span>
+            <span>Sber500xDisrupt</span><span class="sep" aria-hidden="true"></span>
+            <span>гипотеза Сбера №27</span>
+          </p>
+
+          <h1 class="hero-title">Написал, стёр,<em>написал заново</em></h1>
+
+          <p class="hero-lede">
+            Клавиатура, которая по одному нажатию предлагает <b>три варианта ответа разного тона</b> —
+            прямо в том чате, где вы застряли. Без скриншотов, без перехода в другое приложение,
+            без чтения переписки в фоне.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-solid" href="#how">
+              Как это выглядит
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="application.html">Читать заявку</a>
+          </div>
+        </div>
+
+        <figure class="hero-device" id="how">
+          <div class="device">
+            <div class="screen">
+
+              <div class="scr-top">
+                <span class="back" aria-hidden="true">‹</span>
+                <span class="av" aria-hidden="true">А</span>
+                <span class="who"><b>Аня</b><span>была в сети недавно</span></span>
+              </div>
+
+              <div class="chat">
+                <p class="day">сегодня</p>
+                <div class="bub out">сходим в субботу на тот фестиваль? там как раз твои играют<time>22:09</time></div>
+                <div class="bub in flat">ок<time>22:41</time></div>
+              </div>
+
+              <div class="composer">
+                <span class="fld">Сообщение<span class="caret" aria-hidden="true"></span></span>
+                <span class="send" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 20.5 21 12 3 3.5 3 10l12 2-12 2z"/></svg></span>
+              </div>
+
+              <div class="kb">
+                <div class="kb-head">
+                  <span class="t">Три варианта ответа</span>
+                  <span class="priv">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10.5" width="16" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/></svg>
+                    отправлено 2 сообщения
+                  </span>
+                </div>
+
+                <ul class="opts">
+                  <li class="opt cool">
+                    <span class="lbl">сдержанный</span>
+                    <p>Договорились. Скину время, как гляну расписание.</p>
+                  </li>
+                  <li class="opt warm">
+                    <span class="lbl">тёплый</span>
+                    <p>Отлично) Тогда беру билеты, а ты выбираешь, кого слушаем первыми.</p>
+                  </li>
+                  <li class="opt fun">
+                    <span class="lbl">с юмором</span>
+                    <p>«Ок» звучит как приговор. Разреши поверить, что это согласие.</p>
+                  </li>
+                </ul>
+
+                <div class="kb-draft">
+                  <span class="cap">черновик:</span>
+                  <span class="pill">смягчить</span>
+                  <span class="pill">короче</span>
+                  <span class="pill">увереннее</span>
+                </div>
+
+                <div class="keys" aria-hidden="true">
+                  <div class="krow"><span>й</span><span>ц</span><span>у</span><span>к</span><span>е</span><span>н</span><span>г</span><span>ш</span><span>щ</span><span>з</span><span>х</span></div>
+                  <div class="krow"><span>ф</span><span>ы</span><span>в</span><span>а</span><span>п</span><span>р</span><span>о</span><span>л</span><span>д</span><span>ж</span><span>э</span></div>
+                  <div class="krow"><span class="wide dim">⇧</span><span>я</span><span>ч</span><span>с</span><span>м</span><span>и</span><span>т</span><span>ь</span><span>б</span><span>ю</span><span class="wide dim">⌫</span></div>
+                  <div class="krow">
+                    <span class="dim">123</span>
+                    <span class="hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 9.6 8.6 3 11l6.6 2.4L12 20l2.4-6.6L21 11l-6.6-2.4z"/></svg>подскажи</span>
+                    <span class="space">пробел</span>
+                    <span class="dim">⏎</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <figcaption class="visually-hidden"></figcaption>
+        </figure>
+      </div>
+    </section>
+
   </div>
 </div>
 
-<main>
+<main id="main">
 
-<section>
-  <p class="q">Какую гипотезу вы выбрали? Зафиксируйте гипотезу по образцу на сайте</p>
-  <div class="duo">
-    <div class="card"><h3>Проблема</h3><p>В переписке, где ставки высоки — знакомство, флирт, важное объяснение, — слова подбираются труднее всего: паузы затягиваются, а страх быть неправильно понятым мешает писать.</p></div>
-    <div class="card accented"><h3>Гипотеза</h3><p>ИИ подсказывает уместные ответы с учётом тона и контекста диалога — помогает знакомиться, поддерживать разговор и звучать как лучшая версия себя.</p></div>
-  </div>
-</section>
+  <section class="band first">
+    <div class="shell">
+      <div class="sec-head">
+        <span class="mono">Момент</span>
+        <h2>Он знает, что хочет сказать.<br><em>Он не знает, как.</em></h2>
+      </div>
 
-<section>
-  <p class="q">В рамках выбранной гипотезы раскройте суть идеи: для кого (ЦА), какая боль, в каком формате решение</p>
-  <h2>Для кого</h2>
-  <p>Люди 18–30, которые ежедневно ведут переписки с высокой ставкой. Ядро — знакомства: первое сообщение, попытка перевести разговор из вежливого в живой, ответ на односложное «ок». Вокруг ядра — те же люди в рабочих, семейных и конфликтных переписках.</p>
-  <h2 style="margin-top:34px">Какая боль</h2>
-  <p>Человек знает, что хочет сказать, но не знает, как. Он пишет и стирает, откладывает телефон и возвращается через час — а пауза сама становится сообщением. Приложения-подсказчики требуют выйти из мессенджера, сделать скриншот, загрузить, скопировать и вернуться: шесть действий там, где человек колеблется секунды.</p>
-  <h2 style="margin-top:34px">Формат решения</h2>
-  <div class="claims"><div class="claim"><b>Вызов по кнопке, а не постоянное чтение</b><span>Клавиатура не анализирует переписку в фоне. Пользователь сам нажимает «подскажи», и только тогда последние сообщения уходят на обработку. Всё остальное время это обычная клавиатура.</span></div><div class="claim"><b>Три варианта разного тона</b><span>Сдержанный, тёплый, с юмором. Пользователь выбирает, каким он хочет быть в этом разговоре.</span></div><div class="claim"><b>Работа с черновиком</b><span>Кнопки «смягчить», «короче», «увереннее» переписывают то, что человек уже сформулировал сам. По нашей гипотезе это самый частый сценарий.</span></div><div class="claim"><b>«Что он имел в виду»</b><span>Разбор непонятного ответа: возможные прочтения, а не одно как истина.</span></div></div>
-</section>
+      <div class="split">
+        <div class="drafting">
+          <p class="d struck">Привет! Классное фото с гор, где это снято?</p>
+          <p class="d struck">о, ты тоже была на Алтае?</p>
+          <p class="d struck">привет)</p>
+          <p class="d live">Привет<span class="caret" aria-hidden="true"></span></p>
+          <p class="meta">четвёртая попытка · одиннадцать минут · не отправлено</p>
+        </div>
 
-<section>
-  <p class="q">В чём конкурентное преимущество вашей идеи? Чем она будет отличаться от решений, которые уже есть на рынке?</p>
-  <div class="claims"><div class="claim"><b>Мы в моменте, а конкуренты — после него</b><span>Rizz, YourMove, Wingman и их клоны работают через скриншот в отдельном приложении. Пока человек переключился и вернулся, момент прошёл. Это разница между продуктом раз в неделю и продуктом двадцать раз в день.</span></div><div class="claim"><b>Приватность как конструкция, а не обещание</b><span>Обрабатываем сообщения только по явному нажатию и показываем, что именно ушло. Для продукта, живущего в личных переписках, это единственная модель, которую можно предъявить и пользователю, и банку.</span></div><div class="claim"><b>Русская интонация</b><span>Разница между «ты» и «вы», между дружеским и заигрывающим тоном устроена в русском иначе, и универсальные модели её не держат.</span></div><div class="claim"><b>Помощь дожать своё, а не сказать за тебя</b><span>Главный сценарий — переписать собственный черновик. Пользователь остаётся автором, продукт снимает затык.</span></div><div class="claim"><b>Не только знакомства</b><span>Конкуренты заперты в дейтинге и теряют пользователя, когда он перестаёт знакомиться.</span></div></div>
-</section>
+        <div class="split-text">
+          <p class="lead">
+            Переписка с высокой ставкой — это не только знакомства. Попросить о повышении,
+            отказать не обидев, извиниться, написать первым спустя месяц молчания.
+            Один и тот же человек, разные дни.
+          </p>
+          <p>
+            В такой переписке пауза сама становится сообщением: чем дольше молчание, тем труднее
+            ответить. Человек откладывает телефон и возвращается через час — и отвечать уже неловко.
+          </p>
+          <p>
+            Помощь, которая приходит через шесть действий и полторы минуты, опаздывает.
+            Поэтому такими приложениями пользуются один раз из любопытства.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section>
-  <p class="q">Распишите план работ по неделям (спринтами) от идеи до MVP с первыми пользователями</p>
-  <ol class="sprints"><li class="sprint"><span class="wk">Неделя 1</span><b>Момент затруднения</b><span>15 интервью: где человек реально зависает и что делает сейчас. Выбираем один главный сценарий для MVP. <em>· Вафаев, Ярочкин</em></span></li><li class="sprint"><span class="wk">Неделя 2</span><b>Клавиатура</b><span>Работающая клавиатура на Android: установка, переключение, ввод, кнопка вызова. Ничего умного — каркас, который не тормозит при наборе. <em>· Клушин</em></span></li><li class="sprint"><span class="wk">Неделя 3</span><b>Подсказка</b><span>Три варианта разного тона по последним сообщениям. Метрика недели — задержка: дольше пары секунд, и пользователь набирает сам. <em>· Ярочкин, Клушин</em></span></li><li class="sprint milestone"><span class="wk">Неделя 4</span><b>MVP и первые пользователи — <em>MVP</em></b><span>Переписывание черновика, экран прозрачности, аналитика. Запуск на 30–50 человек. <em>· Вся команда</em></span></li><li class="sprint"><span class="wk">Неделя 5</span><b>Данные и вторые 15 интервью</b><span>Сколько раз в день вызывают, какой вариант выбирают, правят ли перед отправкой. <em>· Полковникова, Ярочкин</em></span></li><li class="sprint"><span class="wk">Неделя 6</span><b>Качество тона</b><span>Регистр вежливости, разбор ответа собеседника. Метрика — доля использованных подсказок. <em>· Ярочкин, Вафаев</em></span></li><li class="sprint milestone"><span class="wk">Неделя 7</span><b>Рост — <em>70+ пользователей</em></b><span>Студенческие сообщества, тематические каналы, механика приглашения. <em>· Полковникова, Сердюк</em></span></li><li class="sprint milestone"><span class="wk">Неделя 8</span><b>Нагрузка — <em>Готовность к 1000 DAU</em></b><span>Кеш, деградация при плохой сети, базовый режим офлайн. Клавиатура не имеет права подвисать. <em>· Клушин, Ярочкин</em></span></li></ol>
-</section>
+  <section class="band band-paper2">
+    <div class="shell">
+      <div class="sec-head">
+        <span class="mono">Почему клавиатура</span>
+        <h2>Шесть действий против <em>одного</em></h2>
+        <p>Rizz, YourMove, Wingman и десятки их клонов живут в отдельном приложении и работают через скриншот. Клавиатура уже открыта — она и есть то место, где человек застревает.</p>
+      </div>
 
-<section>
-  <p class="q">Какие функции продукта планируете осуществлять с помощью LLM?</p>
-  <ul class="llm"><li><span class="n">1</span><div><b>Генерация вариантов по контексту</b><span>Три реплики разного тона. Ключевое не текст, а попадание в регистр: тот же смысл с коллегой и на свидании формулируется по-разному.</span></div></li><li><span class="n">2</span><div><b>Переписывание черновика</b><span>Мягче, короче, увереннее — с сохранением смысла и авторской манеры.</span></div></li><li><span class="n">3</span><div><b>Разбор сообщения собеседника</b><span>Возможные прочтения короткого ответа, с явным указанием, что это версии, а не факт.</span></div></li><li><span class="n">4</span><div><b>Определение тона диалога</b><span>Насколько разговор формальный, тёплый, напряжённый — и подстройка под текущее состояние переписки.</span></div></li><li><span class="n">5</span><div><b>Первое сообщение</b><span>По открытому профилю или поводу знакомства — барьер, на котором чаще всего останавливаются.</span></div></li><li><span class="n">6</span><div><b>Фильтр манипуляций</b><span>Модель отсекает запросы на давление и агрессию. Продукт помогает выразить себя, а не продавить другого.</span></div></li></ul>
-</section>
+      <div class="versus">
+        <div class="vs-card">
+          <span class="tag">Приложение-подсказчик</span>
+          <h3>Пока вы вернулись, момент прошёл</h3>
+          <ol class="steps">
+            <li>выйти из мессенджера</li>
+            <li>сделать скриншот переписки</li>
+            <li>загрузить его в приложение</li>
+            <li>дождаться вариантов</li>
+            <li>скопировать нужный</li>
+            <li>вернуться в чат и вставить</li>
+          </ol>
+          <p class="vs-note">Собеседник в это время видит «печатает» и тишину.</p>
+        </div>
 
-<section>
-  <p class="q">Сколько у вас человек в команде? Ранее вы уже работали такой командой?</p>
-  <div class="team"><div class="member"><div class="role">DS · продукт</div><div class="nm">Дмитрий Ярочкин</div><div class="gh">github.com/yafufig</div></div><div class="member"><div class="role">Разработка</div><div class="nm">Артём Клушин</div><div class="gh">github.com/arklual</div></div><div class="member"><div class="role">Продукт · аналитика</div><div class="nm">Мария Полковникова</div></div><div class="member"><div class="role">Маркетинг · экономика</div><div class="nm">Марк Сердюк</div></div><div class="member"><div class="role">Продукт · бизнес-анализ</div><div class="nm">Элшодбек Вафаев</div></div></div>
-  <p class="note">Этим же составом мы работали над JOIN — Telegram Mini App для поиска компании под мероприятия: от исследования проблемы до работающего прототипа с регистрацией, лентой событий с фильтрами, подбором собеседника и чатами.</p>
-</section>
+        <div class="vs-card win">
+          <span class="tag">Тон</span>
+          <h3>Одно касание, не выходя из чата</h3>
+          <ol class="steps">
+            <li>нажать «подскажи» на клавиатуре</li>
+          </ol>
+          <p class="vs-note">
+            Это не про удобство. Это разница между продуктом, который открывают раз в неделю,
+            и продуктом, который открывают двадцать раз в день.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="shell">
+      <div class="sec-head">
+        <span class="mono">Что делает</span>
+        <h2>Четыре вещи, <em>и ни одной лишней</em></h2>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <span class="num">01</span>
+          <h3>Три варианта разного тона</h3>
+          <p>Не один «правильный» ответ, а три: сдержанный, тёплый, с юмором. Вы выбираете, каким хотите быть в этом разговоре.</p>
+        </article>
+        <article class="card">
+          <span class="num">02</span>
+          <h3>Переписать свой черновик</h3>
+          <p>«Смягчить», «короче», «увереннее» — про текст, который вы уже написали сами. По нашей гипотезе это самый частый сценарий.</p>
+        </article>
+        <article class="card">
+          <span class="num">03</span>
+          <h3>Что он имел в виду</h3>
+          <p>Разбор односложного «ок», долгой паузы, резкой смены тона. Несколько возможных прочтений, а не одно как истина.</p>
+        </article>
+        <article class="card">
+          <span class="num">04</span>
+          <h3>Первое сообщение</h3>
+          <p>По открытому профилю или по поводу знакомства — тот самый барьер, на котором чаще всего останавливаются.</p>
+        </article>
+      </div>
+
+      <div class="frags">
+        <figure class="frag-wrap">
+          <div class="frag">
+            <span class="frag-title">Черновик → «смягчить»</span>
+            <div class="draftbox"><span class="cap">вы написали</span>ты вообще собираешься отвечать или нет</div>
+            <div class="arrow" aria-hidden="true">↓</div>
+            <div class="kb-draft">
+              <span class="pill on">смягчить</span>
+              <span class="pill">короче</span>
+              <span class="pill">увереннее</span>
+            </div>
+            <div class="draftbox" style="color:var(--ink)"><span class="cap">получилось</span>Не хочу навязываться — просто напиши, когда будет минутка.</div>
+          </div>
+          <figcaption>Пользователь остаётся автором. Продукт снимает затык, а не пишет за него.</figcaption>
+        </figure>
+
+        <figure class="frag-wrap">
+          <div class="frag">
+            <span class="frag-title">Разбор ответа собеседника</span>
+            <div class="draftbox"><span class="cap">вам ответили</span>ок</div>
+            <div class="arrow" aria-hidden="true">↓</div>
+            <div class="readings">
+              <p class="reading"><b>01</b>Согласие без энтузиазма: план принят, но выбирали не вместе.</p>
+              <p class="reading"><b>02</b>Занята и отвечает на бегу — тогда пауза ничего не значит.</p>
+              <p class="reading"><b>03</b>Обида на что-то из прошлой переписки.</p>
+            </div>
+          </div>
+          <figcaption>Продукт не читает мысли и не делает вид, что читает: он показывает версии.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band-paper2">
+    <div class="shell">
+      <div class="sec-head">
+        <span class="mono">Отличия</span>
+        <h2>Чем это не похоже <em>на то, что уже есть</em></h2>
+      </div>
+
+      <ol class="edges">
+        <li>
+          <span class="n" aria-hidden="true">1</span>
+          <div>
+            <h3>Мы в моменте, конкуренты — после него</h3>
+            <p>Все существующие решения требуют выйти из чата. Мы отвечаем внутри клавиатуры за одно касание. Отсюда и частота: подсказка нужна не в одном разговоре из ста, а в каждом, где человек задумался перед отправкой.</p>
+          </div>
+        </li>
+        <li>
+          <span class="n" aria-hidden="true">2</span>
+          <div>
+            <h3>Русский язык и русская интонация</h3>
+            <p>Сервисы натренированы на английских переписках и на русском выдают кальку. Разница между «ты» и «вы», между дружеским и заигрывающим тоном в русском устроена иначе — универсальные модели её не держат.</p>
+          </div>
+        </li>
+        <li>
+          <span class="n" aria-hidden="true">3</span>
+          <div>
+            <h3>Помочь дожать своё, а не сказать за тебя</h3>
+            <p>Конкуренты позиционируются как генератор реплик, и пользователь быстро упирается в ощущение, что переписывается не он. У нас главный сценарий — переписывание собственного черновика.</p>
+          </div>
+        </li>
+        <li>
+          <span class="n" aria-hidden="true">4</span>
+          <div>
+            <h3>Не только знакомства</h3>
+            <p>Конкуренты заперты в дейтинге и теряют пользователя, когда он перестаёт знакомиться. Наша механика одинаково работает в рабочих, семейных и конфликтных переписках.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="shell">
+      <div class="privacy">
+        <div>
+          <span class="mono">Приватность</span>
+          <h2>Продукт, который читает все ваши чаты, <em>не имеет права на существование</em></h2>
+          <p>
+            Никакая польза этого не оправдывает — поэтому вызов по кнопке заложен в конструкцию,
+            а не в текст пользовательского соглашения. Всё остальное время это обычная клавиатура.
+          </p>
+        </div>
+        <ul class="pchecks">
+          <li>
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <span>Переписка не анализируется в фоне — ни строки, пока вы не нажали кнопку</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <span>Видно, что именно ушло на обработку: сколько сообщений и каких</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <span>Модель отсекает запросы на давление, манипуляцию и агрессию — это ограничение в продукте, а не в правилах</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="field">
+    <div class="shell band-tight">
+      <div class="sec-head" style="margin-bottom:0">
+        <span class="mono" style="color:var(--hero-ink-2)">Куда целимся</span>
+        <h2 style="color:var(--hero-ink)">Номинация <em style="color:#fff">«Высокая частотность»</em></h2>
+        <p style="color:var(--hero-ink-2)">
+          Клавиатура открывается десятки раз в день. Это единственный класс продукта в списке гипотез,
+          где 25+ обращений на пользователя в день возникают естественно, а не за счёт искусственных напоминаний.
+        </p>
+      </div>
+      <dl class="facts">
+        <div><dt>Трек</dt><dd>Sber500xDisrupt<small>Трек 1 · Social &amp; Family</small></dd></div>
+        <div><dt>Гипотеза</dt><dd>№27 Сбера<small>Клавиатура для смелых разговоров</small></dd></div>
+        <div><dt>Платформа</dt><dd>Android<small>iOS — вторым шагом, там расширение клавиатуры проходит модерацию</small></dd></div>
+        <div><dt>MVP с пользователями</dt><dd>Неделя 4<small>Готовность к 1 000 DAU — неделя 8</small></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="band" id="team">
+    <div class="shell">
+      <div class="sec-head">
+        <span class="mono">Команда</span>
+        <h2>Пятеро, которые <em>уже собирали продукт вместе</em></h2>
+        <p>Роли распределены и проверены на предыдущем проекте — это тот же состав, а не собранная под конкурс группа.</p>
+      </div>
+
+      <div class="team">
+        <article class="person">
+          <span class="role">CAIO · капитан</span>
+          <span class="nm">Дмитрий Ярочкин</span>
+          <span class="what">Data Science и продукт. Отвечает за качество подсказок и за то, что считается успехом.</span>
+          <span class="gh"><a href="https://github.com/yafufig">github.com/yafufig</a></span>
+        </article>
+        <article class="person">
+          <span class="role">CTO</span>
+          <span class="nm">Артём Клушин</span>
+          <span class="what">Разработка. Клавиатура, задержка ответа, поведение при плохой сети.</span>
+          <span class="gh"><a href="https://github.com/arklual">github.com/arklual</a></span>
+        </article>
+        <article class="person">
+          <span class="role">CVO</span>
+          <span class="nm">Мария Полковникова</span>
+          <span class="what">Продуктовая аналитика и рост: что меряем, откуда приходят пользователи, что их удерживает.</span>
+        </article>
+        <article class="person">
+          <span class="role">CFO</span>
+          <span class="nm">Марк Сердюк</span>
+          <span class="what">Маркетинг и экономика: стоимость привлечения, каналы, модель монетизации.</span>
+        </article>
+        <article class="person">
+          <span class="role">CPO</span>
+          <span class="nm">Элшодбек Вафаев</span>
+          <span class="what">Продуктовое и бизнес-исследование: интервью, сценарии, приоритеты в бэклоге.</span>
+        </article>
+      </div>
+
+      <div class="joinbox">
+        <h3>Совместный проект: JOIN — Telegram Mini App</h3>
+        <p>
+          Этим же составом, с теми же ролями, мы довели до работающего прототипа JOIN — приложение,
+          которое подбирает компанию под мероприятие. Не концепт и не презентация: интерфейс,
+          в котором проходят все шаги пользователя.
+        </p>
+        <ul class="chips">
+          <li>регистрация с интересами</li>
+          <li>лента событий</li>
+          <li>фильтры по цене, дате и тегам</li>
+          <li>избранное</li>
+          <li>подбор напарника с уведомлением</li>
+          <li>чат с подсказками для начала разговора</li>
+          <li>группы по событиям</li>
+          <li>переход к покупке билета</li>
+        </ul>
+        <p style="margin-top:18px">
+          Последний пункт списка — подсказки для начала разговора — мы уже делали руками в JOIN.
+          Именно оттуда и выросла эта гипотеза.
+        </p>
+
+        <!-- СЮДА: названия хакатонов с местами и акселераторов -->
+        <div class="slot">
+          <b>Хакатоны и акселераторы</b>
+          Место под названия, годы и результаты — вставим, когда сверим формулировки с участниками.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band-paper2">
+    <div class="shell">
+      <div class="closing">
+        <h2>Развёрнутые ответы <em>по анкете конкурса</em></h2>
+        <p class="lead">Гипотеза, аудитория, боль, формат решения, конкурентное преимущество, план по восьми неделям, функции на LLM и состав команды.</p>
+        <p style="margin-top:26px"><a class="btn btn-dark" href="application.html">Открыть заявку
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a></p>
+      </div>
+    </div>
+  </section>
 
 </main>
 
-<footer>
-  Заявка на конкурс Sber500xDisrupt · Трек 1 · капитан Дмитрий Ярочкин · Клавиатура для смелых разговоров
+<footer class="site-foot">
+  <div class="shell">
+    <div class="foot-grid">
+      <p class="big">Клавиатура для смелых разговоров</p>
+      <nav class="foot-links" aria-label="Ссылки">
+        <a href="index.html">Продукт</a>
+        <a href="application.html">Заявка</a>
+        <a href="https://github.com/yafufig">github.com/yafufig</a>
+        <a href="https://github.com/arklual">github.com/arklual</a>
+      </nav>
+    </div>
+    <p class="foot-note">
+      «Тон» — рабочее название. Материалы к заявке на Sber500xDisrupt, Трек 1.
+      Капитан — Ярочкин Дмитрий Владимирович. Интерфейс на странице — макет продукта, а не скриншот работающего приложения.
+    </p>
+  </div>
 </footer>
-</div>
+
+<style>
+/* локальные раскладки этой страницы */
+.band.first{ padding-top:196px }
+.split{ display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); gap:48px; align-items:start }
+.split-text{ display:flex; flex-direction:column; gap:16px; padding-top:6px }
+.split-text p{ color:var(--ink-2) }
+.frags{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:24px; margin-top:38px }
+.frag-wrap{ margin:0; display:flex; flex-direction:column; gap:14px }
+.frag-wrap figcaption{ font-size:15px; color:var(--ink-3); padding:0 4px }
+.closing{ max-width:66ch }
+.closing p{ color:var(--ink-2) }
+.visually-hidden{ position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap }
+@media (max-width:1060px){
+  .band.first{ padding-top:170px }
+  .split{ grid-template-columns:minmax(0,1fr); gap:32px }
+}
+@media (max-width:780px){ .band.first{ padding-top:150px } }
+</style>
+
+<script>
+(function(){
+  var b = document.getElementById('theme');
+  if(!b) return;
+  b.addEventListener('click', function(){
+    var cur = document.documentElement.getAttribute('data-theme');
+    if(!cur) cur = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    var next = cur === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try{ localStorage.setItem('tone-theme', next); }catch(e){}
+  });
+})();
+</script>
+
 </body>
 </html>
